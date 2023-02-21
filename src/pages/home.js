@@ -3,7 +3,7 @@ import BigCalender from '../components/home/BigCalender';
 import FooterButton from '../components/home/FooterButton';
 import Warming from '../components/home/Warming';
 
-function App() {
+function Home() {
   return (
     <>
     <Navber/>
@@ -14,4 +14,4 @@ function App() {
   );
 }
 
-export default App;
+export default Home;

@@ -7,8 +7,13 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
+import Home from "./pages/Home";
 
 const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
   {
     path: "/menu",
     element: <Menu />,
