@@ -1,0 +1,269 @@
+{
+  "quiz": {
+    "quizID": "x42kew",
+    "title": "你適合什麼類型的酒",
+    "subtitle": "給不知道喝什麼酒的你",
+    "content": [
+      {
+        "id": 0,
+        "text": "你屬於什麼類型的人",
+        "question": [
+          {
+            "text": "活潑型",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "活潑善與人交際",
+            "score": 1,
+            "credit": "someone"
+          },
+          {
+            "text": "悶騷型",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "熟了之後很瘋",
+            "score": 2,
+            "credit": "someone"
+          },
+          {
+            "text": "孤僻型",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "喜歡默默一個人",
+            "score": 3,
+            "credit": "someone"
+          },
+          {
+            "text": "瘋狗型",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "永遠都很瘋",
+            "score": 4,
+            "credit": "someone"
+          }
+        ]
+      },
+      {
+        "id": 1,
+        "text": "前伴侶私訊你會說什麼",
+        "question": [
+          {
+            "text": "給我走開",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "好馬不吃回頭草",
+            "score": 1,
+            "credit": "someone"
+          },
+          {
+            "text": "渣男/綠茶退散!!",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "冷靜分析",
+            "score": 2,
+            "credit": "someone"
+          },
+          {
+            "text": "沒你我過得很好",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "我勝利",
+            "score": 3,
+            "credit": "someone"
+          },
+          {
+            "text": "你是不是想借錢",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "現實主義",
+            "score": 4,
+            "credit": "someone"
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "text": "手機掉下去會說什麼?",
+        "question": [
+          {
+            "text": "台灣國罵",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "正港台灣人",
+            "score": 1,
+            "credit": "someone"
+          },
+          {
+            "text": "Oh My God",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "假ABC",
+            "score": 2,
+            "credit": "someone"
+          },
+          {
+            "text": "不!!!!!!!",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "先喊再說",
+            "score": 3,
+            "credit": "someone"
+          },
+          {
+            "text": "阿!?",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "反應慢半拍",
+            "score": 4,
+            "credit": "someone"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "text": "有帥哥/美女向你搭話，他的目的是?",
+        "question": [
+          {
+            "text": "搞直銷的",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "陳年味",
+            "score": 1,
+            "credit": "someone"
+          },
+          {
+            "text": "找你買愛心筆",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "成熟的人",
+            "score": 2,
+            "credit": "someone"
+          },
+          {
+            "text": "想搭訕",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "年少輕狂",
+            "score": 3,
+            "credit": "someone"
+          },
+          {
+            "text": "只是問路的",
+            "img": "https://memeprod.sgp1.digitaloceanspaces.com/user-template/6b3618452bf8b332cf2fff6d8ca3b7c3.png",
+            "alt": "什麼都能混",
+            "score": 4,
+            "credit": "someone"
+          }
+        ]
+      }
+    ],
+    "answers": [
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "搞直銷的"],
+        "text": "莫希托",
+        "img": "https://img.ooopenlab.cc/X5v33dpN0UiVvC54Z70MJ7lRYsddWovYMTtxbDHPeY8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL3MwcHYwRS9jb3Zlci9zcmM_dD0xNjc0NzI2NTI2",
+        "alt": "你是不是想買醉?"
+      },
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "找你買愛心筆"],
+        "text": "柯夢波丹",
+        "img": "https://img.ooopenlab.cc/c1s4qhrvv8xe3DjcrfiHeE5fyi4RFQfirtONSwCysg8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL1gzRlNQNS9jb3Zlci9zcmM_dD0xNjc0NzI2NDkx",
+        "alt": "期待又害怕受傷害"
+      },
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "想搭訕"],
+        "text": "長島冰茶",
+        "img": "https://img.ooopenlab.cc/-8OFbpopOEDrEcmXi1kpFgmmT1iDfPzrLWlRP6fK5D4/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL0ZyWFZ1VS9jb3Zlci9zcmM_dD0xNjc0NTY0MDU2",
+        "alt": "成年人想追尋刺激"
+      },
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "只是問路的"],
+        "text": "內格羅尼",
+        "img": "https://img.ooopenlab.cc/jB1lKEWw8uNMMXYfBViiEo9JRV292PXUkz29lt6AbTQ/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL21JcldseS9jb3Zlci9zcmM_dD0xNjc0NzI2NTUx",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": ["孤僻型", "渣男/綠茶退散!!", "Oh My God", "搞直銷的"],
+        "text": "古典雞尾酒",
+        "img": "https://img.ooopenlab.cc/OXgvxHXwmzDCdGNvg1BLz7jixv6Cn27EKv-VN1J2_Ts/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL01EQTBYUi9jb3Zlci9zcmM_dD0xNjc0NzUxMjE4",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": [
+          "孤僻型",
+          "你是不是想借錢",
+          "不!!!!!!!",
+          "找你買愛心筆"
+        ],
+        "text": "側車",
+        "img": "https://img.ooopenlab.cc/ij_tOqKRVYSSjHqBLfeGiZFGl0fqCvSG-EHmnWezoso/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzLzQwN0F3Qy9jb3Zlci9zcmM_dD0xNjc0NTY0MTIx",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": ["瘋狗型", "渣男/綠茶退散!!", "台灣國罵", "想搭訕"],
+        "text": "莫希托",
+        "img": "https://img.ooopenlab.cc/X5v33dpN0UiVvC54Z70MJ7lRYsddWovYMTtxbDHPeY8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL3MwcHYwRS9jb3Zlci9zcmM_dD0xNjc0NzI2NTI2",
+        "alt": "你是不是想買醉?"
+      },
+      {
+        "combination": ["瘋狗型", "渣男/綠茶退散!!", "不!!!!!!!", "給我走開"],
+        "text": "柯夢波丹",
+        "img": "https://img.ooopenlab.cc/c1s4qhrvv8xe3DjcrfiHeE5fyi4RFQfirtONSwCysg8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL1gzRlNQNS9jb3Zlci9zcmM_dD0xNjc0NzI2NDkx",
+        "alt": "期待又害怕受傷害"
+      },
+      {
+        "combination": ["悶騷型", "渣男/綠茶退散!!", "阿!?", "搞直銷的"],
+        "text": "長島冰茶",
+        "img": "https://img.ooopenlab.cc/-8OFbpopOEDrEcmXi1kpFgmmT1iDfPzrLWlRP6fK5D4/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL0ZyWFZ1VS9jb3Zlci9zcmM_dD0xNjc0NTY0MDU2",
+        "alt": "成年人想追尋刺激"
+      },
+      {
+        "combination": [
+          "悶騷型",
+          "沒你我過得很好",
+          "不!!!!!!!",
+          "找你買愛心筆"
+        ],
+        "text": "內格羅尼",
+        "img": "https://img.ooopenlab.cc/jB1lKEWw8uNMMXYfBViiEo9JRV292PXUkz29lt6AbTQ/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL21JcldseS9jb3Zlci9zcmM_dD0xNjc0NzI2NTUx",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": [
+          "悶騷型",
+          "你是不是想借錢",
+          "Oh My God",
+          "找你買愛心筆"
+        ],
+        "text": "古典雞尾酒",
+        "img": "https://img.ooopenlab.cc/OXgvxHXwmzDCdGNvg1BLz7jixv6Cn27EKv-VN1J2_Ts/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL01EQTBYUi9jb3Zlci9zcmM_dD0xNjc0NzUxMjE4",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": ["悶騷型", "給我走開", "台灣國罵", "想搭訕"],
+        "text": "側車",
+        "img": "https://img.ooopenlab.cc/ij_tOqKRVYSSjHqBLfeGiZFGl0fqCvSG-EHmnWezoso/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzLzQwN0F3Qy9jb3Zlci9zcmM_dD0xNjc0NTY0MTIx",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": ["活潑型", "渣男/綠茶退散!!", "Oh My God", "只是問路的"],
+        "text": "莫希托",
+        "img": "https://img.ooopenlab.cc/X5v33dpN0UiVvC54Z70MJ7lRYsddWovYMTtxbDHPeY8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL3MwcHYwRS9jb3Zlci9zcmM_dD0xNjc0NzI2NTI2",
+        "alt": "你是不是想買醉?"
+      },
+      {
+        "combination": [
+          "活潑型",
+          "沒你我過得很好",
+          "Oh My God",
+          "找你買愛心筆"
+        ],
+        "text": "柯夢波丹",
+        "img": "https://img.ooopenlab.cc/c1s4qhrvv8xe3DjcrfiHeE5fyi4RFQfirtONSwCysg8/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL1gzRlNQNS9jb3Zlci9zcmM_dD0xNjc0NzI2NDkx",
+        "alt": "期待又害怕受傷害"
+      },
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "想搭訕"],
+        "text": "長島冰茶",
+        "img": "https://img.ooopenlab.cc/-8OFbpopOEDrEcmXi1kpFgmmT1iDfPzrLWlRP6fK5D4/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL0ZyWFZ1VS9jb3Zlci9zcmM_dD0xNjc0NTY0MDU2",
+        "alt": "成年人想追尋刺激"
+      },
+      {
+        "combination": ["活潑型", "給我走開", "台灣國罵", "只是問路的"],
+        "text": "內格羅尼",
+        "img": "https://img.ooopenlab.cc/jB1lKEWw8uNMMXYfBViiEo9JRV292PXUkz29lt6AbTQ/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL21JcldseS9jb3Zlci9zcmM_dD0xNjc0NzI2NTUx",
+        "alt": "平凡中偶爾的小確幸"
+      },
+      {
+        "combination": ["孤僻型", "渣男/綠茶退散!!", "台灣國罵", "只是問路的"],
+        "text": "古典雞尾酒",
+        "img": "https://img.ooopenlab.cc/OXgvxHXwmzDCdGNvg1BLz7jixv6Cn27EKv-VN1J2_Ts/rs:fill:1920/q:90/aHR0cHM6Ly9wdWItZGNjNzVkYTE5OGY5NGQ0M2I4OGUxYTVjODcwYzQ0ZTYucjIuZGV2L3lFZTZOZmd6Um9UT2w5enJxT205VHl1czhLaTIvcXVpenplcy91Y1pXdHVXR3RZVXc0czBxd3VJNS9yZXN1bHRzL01EQTBYUi9jb3Zlci9zcmM_dD0xNjc0NzUxMjE4",
+        "alt": "平凡中偶爾的小確幸"
+      }
+    ]
+  }
+}
