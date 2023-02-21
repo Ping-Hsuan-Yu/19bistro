@@ -20,10 +20,23 @@ const Container = styled.div`
   gap: 32px;
 `;
 
+const CheckoutBtn = styled.button`
+  background-color: var(--primary-color);
+  color: white;
+  border: 0;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+  position: absolute;
+  right: calc(50% - 48px);
+  bottom: 32px;
+`;
+
 function Order() {
   const [totalOrder, setTotalOrder] = useState({ qty: 0, class: "" });
   //找此桌號訂單有多少東西
   const [orderDataList, setOrderDataList] = useState([]);
+  const [Btn, setBtn] = useState("block");
   const { table } = useParams();
   const btnInner = {
     href: "/menu/" + table,
@@ -43,6 +56,7 @@ function Order() {
           setTotalOrder({ qty: response.data[0].quantity, class: "show" });
         } else {
           setTotalOrder({ qty: 0, class: "show" });
+          setBtn("none")
         }
       });
   }, []);
@@ -60,6 +74,13 @@ function Order() {
           <OrderCard dataList={obj} key={index} />
         ))}
       </Container>
+      <CheckoutBtn
+        style={{ display: Btn }}
+        type="button"
+        onClick={()=>{alert("!")}}
+      >
+        結帳
+      </CheckoutBtn>
     </>
   );
 }

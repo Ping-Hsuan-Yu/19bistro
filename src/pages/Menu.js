@@ -25,6 +25,7 @@ const Section = styled.section`
 `;
 
 const Title = styled.h3`
+margin:32px 0;
 `;
 
 const Wrap = styled.div`
