@@ -1,14 +1,13 @@
 import { useState, useCallback, useEffect } from "react";
-import "./style.css";
 import styled from 'styled-components';
 
-import Clear from "./weatherimages/19weather-06.png";
-import CloudyFog from "./weatherimages/19weather-08.png";
-import Cloudy from "./weatherimages/19weather-07.png";
-import Fog from "./weatherimages/19weather-11.png";
-import PartiallyClearWithRain from "./weatherimages/19weather-09.png";
-import Snowing from "./weatherimages/19weather-10.png";
-import Thunderstorm from "./weatherimages/19weather-12.png";
+import Clear from "../../img/weatherimages/19weather-06.png";
+import CloudyFog from "../../img/weatherimages/19weather-08.png";
+import Cloudy from "../../img/weatherimages/19weather-07.png";
+import Fog from "../../img/weatherimages/19weather-11.png";
+import PartiallyClearWithRain from "../../img/weatherimages/19weather-09.png";
+import Snowing from "../../img/weatherimages/19weather-10.png";
+import Thunderstorm from "../../img/weatherimages/19weather-12.png";
 
 const Weatherdiv = styled.div`
   margin: 0 0 1.5rem 0;

@@ -1,10 +1,10 @@
 import React from "react";
 import styled from 'styled-components';
 
-import menu from "./btnimages/19btn-01.png";
-import treat from "./btnimages/19btn-02.png";
-import game from "./btnimages/19btn-03.png";
-import test from "./btnimages/19btn-04.png";
+import menu from "../../img/btnimages/19btn-01.png";
+import treat from "../../img/btnimages/19btn-02.png";
+import game from "../../img/btnimages/19btn-03.png";
+import test from "../../img/btnimages/19btn-04.png";
 
 const Container = styled.div`
   margin: 0 10%;
