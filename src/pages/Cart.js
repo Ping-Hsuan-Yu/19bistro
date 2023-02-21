@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import "../Style/Menu.css";
+import "../styles/Menu.css";
 
 import Nav from "../components/menu/Nav";
-import CartTabs from "../components/menu/CartTabs";
+import CartTabs from "../components/cart/CartTabs";
 import CartCard from "../components/cart/CartCard";
 import styled from "styled-components";
 

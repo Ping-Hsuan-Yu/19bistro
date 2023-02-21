@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "../Style/Menu.css";
+import "../styles/Menu.css";
 
-import Nav from "../Components/Menu/Nav";
-import CartTabs from "../Components/Menu/CartTabs";
-import OrderCard from "../Components/Menu/OrderCard";
+import Nav from "../components/menu/Nav";
+import CartTabs from "../components/cart/CartTabs";
+import OrderCard from "../components/cart/OrderCard";
 
 const active = {
   cart: "",

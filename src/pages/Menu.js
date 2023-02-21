@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import "../Style/Menu.css";
-import Nav from "../Components/Menu/Nav";
-import Tab from "../Components/Menu/Tab";
-import Card from "../Components/Menu/Card";
+import "../styles/Menu.css";
+import Nav from "../components/menu/Nav";
+import Tab from "../components/menu/Tab";
+import Card from "../components/menu/Card";
 import { useParams, useNavigate } from "react-router-dom";
-import ScrollSpy from "react-ui-scrollspy";
 import styled from "styled-components";
 
 const category = [
