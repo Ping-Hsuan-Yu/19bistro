@@ -6,11 +6,19 @@ import "../styles/Menu.css";
 import Nav from "../components/menu/Nav";
 import CartTabs from "../components/cart/CartTabs";
 import OrderCard from "../components/cart/OrderCard";
+import styled from "styled-components";
 
 const active = {
   cart: "",
   order: "active-scroll-spy",
 };
+
+const Container = styled.div`
+  margin: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+`;
 
 function Order() {
   const [totalOrder, setTotalOrder] = useState({ qty: 0, class: "" });
@@ -18,7 +26,7 @@ function Order() {
   const [orderDataList, setOrderDataList] = useState([]);
   const { table } = useParams();
   const btnInner = {
-    href: "/" + table,
+    href: "/menu/" + table,
     text: "回到菜單",
   };
 
@@ -41,12 +49,17 @@ function Order() {
   return (
     <>
       <Nav btnInner={btnInner} totalQuantity={false} />
-      <CartTabs active={active} table={table} totalQuantity={false} totalOrder={totalOrder}/>
-      <div className="container wrap">
+      <CartTabs
+        active={active}
+        table={table}
+        totalQuantity={false}
+        totalOrder={totalOrder}
+      />
+      <Container>
         {orderDataList.map((obj, index) => (
           <OrderCard dataList={obj} key={index} />
         ))}
-      </div>
+      </Container>
     </>
   );
 }

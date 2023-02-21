@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import logo from "../../img/19nav.svg";
 
@@ -19,17 +19,20 @@ const Img = styled.img`
   transform: translate(-50%, 0);
 `;
 const Button = styled.button`
-  padding: 10px;
-  border: none;
   background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 0;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-weight: 500;
 `;
 
 const Navber = () => {
   return (
     <Nav>
-        <Img src={logo} alt="" />      
-        <Button>服務鈴</Button>
-        <Button>結帳</Button>
+      <Img src={logo} alt="" />
+      <Button>服務鈴</Button>
+      <Button>結帳</Button>
     </Nav>
   );
 };

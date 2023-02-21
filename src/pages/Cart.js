@@ -66,7 +66,7 @@ function Cart() {
   const sendOrder = () => {
     axios.post("http://localhost:1802/sendorder", { tableNum: table });
     alert("訂單已送出");
-    navigate("/");
+    navigate("/menu");
   };
 
   return (

@@ -37,6 +37,12 @@ const CartInput = styled.div`
   }
 `;
 
+const CartImg = styled.img`
+  width: calc((100vw - 128px) / 6);
+  height: calc((100vw - 128px) / 6);
+  object-fit: contain;
+`;
+
 const CartCard = ({ dataList, totalQuantity, setTotalQuantity }) => {
   const totalQTY = totalQuantity.qty;
   const { quantity, mealName, price, image } = dataList;
@@ -92,7 +98,7 @@ const CartCard = ({ dataList, totalQuantity, setTotalQuantity }) => {
           </button>
         </CartInput>
       </CartInfo>
-      <img className="cartImg" src={"data:image/png;base64," + imgsrc} alt="" />
+      <CartImg src={"data:image/png;base64," + imgsrc} alt="" />
     </Row>
   );
 };

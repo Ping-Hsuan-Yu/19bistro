@@ -1,20 +1,24 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 import logo from "../../img/19nav.svg";
+import { useNavigate } from "react-router-dom";
 
+const NavBar = styled.nav`
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 10%;
+  height: 80px;
+  background-color: var(--primary-color);
+`;
 
 const Button = styled.button`
   background-color: var(--bg-color);
-  color: white;
+  color: var(--primary-color);
   border: 0;
-  padding: 12px 32px;
+  padding: 10px 32px;
   font-size: 1rem;
-  font-weight: 700;
-  & a {
-    text-decoration: none;
-    color: var(--primary-color);
-  }
+  font-weight: 500;
 `;
 
 const Img = styled.img`
@@ -27,20 +31,36 @@ const Img = styled.img`
 
 const Nav = ({ btnInner, totalQuantity }) => {
   const { href, text } = btnInner;
+  let navigate = useNavigate();
   return (
-    <nav>
-     <Img src={logo} alt="" />      
-      <Button>呼叫服務人員</Button>
-      <Button>
-        <Link to={href}>{text}</Link>
-        {/* <span className={`totalQuantity`} >{totalQuantity}</span> */}
+    <NavBar>
+      <Img
+        src={logo}
+        alt=""
+        onClick={() => {
+          navigate("/");
+        }}
+      />
+      <Button
+        onClick={() => {
+          alert("!");
+        }}
+      >
+        服務鈴
+      </Button>
+      <Button
+        onClick={() => {
+          navigate(href);
+        }}
+      >
+        {text}
         {totalQuantity && (
           <span className={`totalQuantity ${totalQuantity.class}`}>
             {totalQuantity.qty}
           </span>
         )}
       </Button>
-    </nav>
+    </NavBar>
   );
 };
 

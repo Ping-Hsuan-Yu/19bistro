@@ -10,37 +10,37 @@ input::-webkit-inner-spin-button {
     margin: 0;
 }
 
-.fixed {
+/* .fixed {
     position: fixed;
     top: 0;
     width: 100vw;
     background-color: var(--bg-color);
-}
+} */
 
-.block {
+/* .block {
     width: 100vw;
     height: 132px;
     background-color: var(--bg-color);
-}
+} */
 
-nav {
+/* nav {
     display: flex;
     justify-content: space-between;
     padding: 16px;
     height: 88px;
     background-color: var(--primary-color);
-}
+} */
 
-.btn {
+/* .btn {
     background-color: var(--primary-color);
     color: white;
     border: 0;
     padding: 12px 32px;
     font-size: 1rem;
     font-weight: 700;
-}
+} */
 
-nav .btn {
+/* nav .btn {
     background-color: var(--bg-color);
 }
 
@@ -52,50 +52,49 @@ nav .btn a {
 .btn:active {
     background-color: var(--bg-color);
     color: var(--primary-color);
-}
+} */
 
-.btn a {
+/* .btn a {
     text-decoration: none;
     color: white;
-}
+} */
 
-.send {
+/* .send {
     position: absolute;
     right: calc(50% - 48px);
     bottom: 32px;
-}
+} */
 
 .totalQuantity {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    width: 20px;
-    height: 20px;
-    background-color: white;
-    color: white;
-    /* color: var(--primary-color); */
-    margin-left: 8px
+    width: 16px;
+    height: 16px;
+    background-color: var(--primary-color);
+    /* color: white; */
+    margin-left: 8px;
+    font-size: 14px;
 }
 
 .show {
-    color: var(--primary-color);
+    color: white;
 }
 
 
-.tabs {
+/* .tabs {
     display: flex;
     padding: 0;
     list-style-type: none;
     overflow-x: auto;
     overflow-y: hidden;
     margin: 0;
-}
+} */
 
 .tabItem {
     word-break: keep-all;
     padding: 12px 36px;
     font-weight: 700;
-    /* border-bottom: 6px var(--primary-color) solid; */
 }
 
 .tabItem a {
@@ -122,7 +121,7 @@ div#A:hover ~ li.tabItem a[href="#A"]{
     border-bottom: 6px var(--primary-color) solid;
 } */
 
-.w33 {
+/* .w33 {
     width: calc(100% / 3);
     text-align: center;
 }
@@ -130,20 +129,19 @@ div#A:hover ~ li.tabItem a[href="#A"]{
 .w66 {
     width: calc(100% / 3 * 2);
     text-align: center;
-}
+} */
 
 .w50 {
     width: 50%;
     text-align: center;
 }
 
-.float {
+/* .float {
     float: left;
     height: 84vh;
 }
 
 .container {
-    /* min-height: calc(100vh - 70px); */
     margin: 32px;
 }
 
@@ -159,20 +157,20 @@ div#A:hover ~ li.tabItem a[href="#A"]{
     display: flex;
     flex-wrap: wrap;
     gap: 32px;
-}
+} */
 
-.row {
+/* .row {
     display: flex;
     flex-direction: row;
-}
+} */
 
-.col {
+/* .col {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-}
+} */
 
-.menuInfo {
+/* .menuInfo {
     width: calc((100vw - 96px) / 4);
 }
 
@@ -181,11 +179,10 @@ div#A:hover ~ li.tabItem a[href="#A"]{
     margin-top: 0;
     margin-bottom: 8px;
     font-size: 1.2rem;
-}
+} */
 
-.menuInfo span {
+/* .menuInfo span {
     display: block;
-    /* margin-top: 16px; */
     font-size: 1.2rem;
     font-weight: 300;
 }
@@ -245,10 +242,10 @@ select:focus {
     height: calc((100vw - 96px) / 5);
     margin: calc(((100vw - 96px) / 8) - ((100vw - 96px) / 10));
     object-fit: contain;
-    /* background-color: lightgray; */
-}
+    background-color: lightgray;
+} */
 
-.cartCard {
+/* .cartCard {
     margin: 16px 64px;
 }
 
@@ -256,7 +253,7 @@ select:focus {
     width: calc((100vw - 128px) / 6);
     height: calc((100vw - 128px) / 6);
     object-fit: contain;
-    /* background-color: var(--bg-color); */
+    background-color: var(--bg-color);
 }
 
 .cartInfo {
@@ -277,7 +274,7 @@ select:focus {
     width: 36px;
     height: 36px;
     text-align: center;
-}
+} */
 
 
 /* form {
