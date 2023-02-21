@@ -8,6 +8,9 @@ import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
 import Home from "./pages/Home";
+import AlcoholQuiz from "./pages/AlcoholQuiz";
+import HomePage from "./pages/HomePage";
+import TransForm from "./pages/Transform";
 
 const router = createBrowserRouter([
   {
@@ -43,6 +46,18 @@ const router = createBrowserRouter([
         element: <Order />,
       },
     ],
+  },
+  {
+    path: "/quizPage",
+    element: <HomePage />,
+  },
+  {
+    path: "/quizPage/transForm",
+    element: <TransForm />,
+  },
+  {
+    path: "/quizPage/transForm/alcoholQuiz",
+    element: <AlcoholQuiz />,
   },
 ]);
 

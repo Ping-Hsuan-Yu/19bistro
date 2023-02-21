@@ -1,0 +1,70 @@
+.mouse {
+  overflow: inherit;
+  position: absolute;
+  pointer-events: none;
+  filter: drop-shadow(0 0 15px rgba(0, 0, 0, 0.5));
+  animation: fadeInout 1s linear infinite;
+}
+
+@keyframes fadeInout {
+  0%,
+  100% {
+    opacity: 0;
+  }
+  20%,
+  60% {
+    opacity: 1;
+  }
+}
+
+.mouse::before {
+  content: "";
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  background: url("https://cdn-icons-png.flaticon.com/512/9427/9427529.png");
+  background-size: cover;
+  z-index: 1;
+  animation: moveShape 1s linear infinite;
+}
+
+@keyframes moveShape {
+  0% {
+    transform: translate(0) rotate(0deg);
+  }
+  100% {
+    transform: translate(300px) rotate(360deg);
+  }
+}
+
+/* 背景動畫 */
+.bgColor {
+  animation: animateBgColor 8s linear infinite;
+}
+
+@keyframes animateBgColor {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+.txtType {
+  overflow: hidden;
+  white-space: nowrap;
+  animation: textTyping 5s steps(16) infinite;
+}
+
+@keyframes textTyping {
+  0%,
+  90%,
+  100% {
+    width: 0px;
+  }
+  30%,
+  60% {
+    width: 170px;
+  }
+}

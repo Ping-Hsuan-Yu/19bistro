@@ -1,5 +1,5 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 
 import menu from "../../img/btnimages/19btn-01.png";
@@ -41,22 +41,26 @@ const Img = styled.img`
   height: 6rem;
 `;
 
-
 const FooterButton = () => {
-let navigate = useNavigate()
+  let navigate = useNavigate();
 
   const btnname = [
     ["想來點", "怎麼點怎麼好吃", menu, "/menu"],
     ["我請你", "一點心意不用放在心上", treat, "/menu"],
     ["來玩吧", "要玩手機不如大家一起玩", game, "/menu"],
-    ["酒測值", "你到底還行不行", test, "/menu"],
+    ["酒測值", "你到底還行不行", test, "/quizPage"],
   ];
 
   return (
     <Container>
       <Quarters>
         {btnname.map((i, e) => (
-          <Button key={`footbtn${e}`} onClick={()=>{navigate(i[3])}}>
+          <Button
+            key={`footbtn${e}`}
+            onClick={() => {
+              navigate(i[3]);
+            }}
+          >
             <Insidelayer>
               <Img src={i[2]} alt="" />
               <Insidetext className="insidetext">{i[0]}</Insidetext>
