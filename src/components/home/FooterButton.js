@@ -47,7 +47,7 @@ const FooterButton = () => {
   const btnname = [
     ["想來點", "怎麼點怎麼好吃", menu, "/menu"],
     ["我請你", "一點心意不用放在心上", treat, "/menu"],
-    ["來玩吧", "要玩手機不如大家一起玩", game, "/menu"],
+    ["來玩吧", "要玩手機不如大家一起玩", game, "/games"],
     ["酒測值", "你到底還行不行", test, "/quizPage"],
   ];
 

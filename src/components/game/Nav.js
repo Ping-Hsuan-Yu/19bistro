@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "@emotion/styled";
-import logo from "../../images/logo.png";
+import logo from "../../img/logo.png";
 
 const Navbar = styled.nav`
     height: 88px;
