@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import Nav from "../components/game/Nav";
-import NavInGamePage from "../components/game/NavInGamePage";
+
+import Navber from "../components/home/Navber";
+
 import Game from "../components/game/Game";
 import PageTitle from "../components/game/PageTitle";
 import { Link } from "react-router-dom";
@@ -25,7 +26,7 @@ const Games = () => {
     let game = ["真心話大冒險", "酒司令", "終極密碼"];
     return (
         <>
-            <Nav />
+            <Navber />
             <PageTitle title={"喝酒の小遊戲"} />
             <GameContainer className="gameContainer">
                 <G to="/games/game1">

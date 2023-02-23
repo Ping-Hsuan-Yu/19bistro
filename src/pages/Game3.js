@@ -36,6 +36,7 @@ import i8 from "../img/mahjong/8條.png";
 import i9 from "../img/mahjong/9條.png";
 
 const Desc = styled.h3`
+    margin: 0;
     text-align: center;
     color: rgb(102, 102, 102);
     font-size: 4.5rem;

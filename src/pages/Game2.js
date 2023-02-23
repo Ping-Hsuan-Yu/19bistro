@@ -6,7 +6,7 @@ import bottle from "../img/bottle.png";
 
 const BottleContainer = styled.div`
     text-align: center;
-    margin: 5rem 0;
+    margin: 4.5rem 0;
 `;
 
 const BottleImg = styled.img`
@@ -17,7 +17,7 @@ const BottleImg = styled.img`
 
 const Touch = styled.h5`
     position: absolute;
-    top: 65%;
+    top: 55%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
