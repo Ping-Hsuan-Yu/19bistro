@@ -13,57 +13,73 @@ import HomePage from "./pages/HomePage";
 import TransForm from "./pages/Transform";
 
 const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <Home />,
-  },
-  {
-    path: "/menu",
-    element: <Menu />,
-    children: [
-      {
-        path: "/menu/:table",
+    {
+        path: "/",
+        element: <Home />,
+    },
+    {
+        path: "/menu",
         element: <Menu />,
-      },
-    ],
-  },
-  {
-    path: "/cart",
-    element: <Cart />,
-    children: [
-      {
-        path: "/cart/:table",
+        children: [
+            {
+                path: "/menu/:table",
+                element: <Menu />,
+            },
+        ],
+    },
+    {
+        path: "/cart",
         element: <Cart />,
-      },
-    ],
-  },
-  {
-    path: "/order",
-    element: <Order />,
-    children: [
-      {
-        path: "/order/:table",
+        children: [
+            {
+                path: "/cart/:table",
+                element: <Cart />,
+            },
+        ],
+    },
+    {
+        path: "/order",
         element: <Order />,
-      },
-    ],
-  },
-  {
-    path: "/quizPage",
-    element: <HomePage />,
-  },
-  {
-    path: "/quizPage/transForm",
-    element: <TransForm />,
-  },
-  {
-    path: "/quizPage/transForm/alcoholQuiz",
-    element: <AlcoholQuiz />,
-  },
+        children: [
+            {
+                path: "/order/:table",
+                element: <Order />,
+            },
+        ],
+    },
+    {
+        path: "/quizPage",
+        element: <HomePage />,
+    },
+    {
+        path: "/quizPage/transForm",
+        element: <TransForm />,
+    },
+    {
+        path: "/quizPage/transForm/alcoholQuiz",
+        element: <AlcoholQuiz />,
+    },
+    {
+        path: "/games",
+        element: <Games />,
+    },
+    {
+        path: "/games/game1",
+        element: <Game1 />,
+    },
+    {
+        path: "/games/game2",
+        element: <Game2 />,
+    },
+    {
+        path: "/games/game3",
+        element: <Game3 />,
+    },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <RouterProvider router={router} />
+    </React.StrictMode>
 );
