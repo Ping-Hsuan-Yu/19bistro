@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-
+import { useNavigate } from "react-router-dom";
 import logo from "../../img/19nav.svg";
 
 const Nav = styled.nav`
@@ -28,9 +28,16 @@ const Button = styled.button`
 `;
 
 const Navber = () => {
+  let navigate = useNavigate();
   return (
     <Nav>
-      <Img src={logo} alt="" />
+      <Img
+        src={logo}
+        alt=""
+        onClick={() => {
+          navigate("/");
+        }}
+      />
       <Button>服務鈴</Button>
       <Button>結帳</Button>
     </Nav>
