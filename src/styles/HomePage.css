@@ -1,11 +1,11 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap"); */
 
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Noto Sans TC", sans-serif;
-}
+} */
 
 :root {
   --black: #333;
@@ -16,7 +16,7 @@
   --bg-color: #e5e1d8;
   --primary-color: #b22c27;
   --secondary-color: #2c4c7b;
-  --body-font-family: "Noto Sans", "Noto Sans JP", "Noto Sans TC", system-ui,
+  --body-font-family: "Noto Sans", "Noto Sans TC", system-ui,
     sans-serif;
 }
 

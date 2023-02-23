@@ -5,6 +5,7 @@ import NavInGamePage from "../components/game/NavInGamePage";
 import Game from "../components/game/Game";
 import PageTitle from "../components/game/PageTitle";
 import { Link } from "react-router-dom";
+import "../styles/game/style.css";
 
 const GameContainer = styled.div`
     cursor: pointer;

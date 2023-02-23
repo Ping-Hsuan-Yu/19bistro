@@ -1,10 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&family=Noto+Sans+TC:wght@100;300;400;500;700;900&family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 :root {
-    --bg-color: #E5E1D8;
-    --primary-color: #B22C27;
-    --secondary-color: #2C4C7B;
-    --body-font-family: 'Noto Sans', 'Noto Sans JP', 'Noto Sans TC', system-ui, sans-serif ;
+  --bg-color: #e5e1d8;
+  --primary-color: #b22c27;
+  --secondary-color: #2c4c7b;
+  --body-font-family: "Noto Sans", "Noto Sans JP", "Noto Sans TC", system-ui,
+    sans-serif;
 }
 
 *,
@@ -20,27 +21,32 @@
 }
 
 body {
-    margin: 0;
-    font-family: var(--body-font-family);
-    color: var(--primary-color);
-    background-color: var(--bg-color);
-  }
+  margin: 0;
+  font-family: var(--body-font-family);
+  color: var(--primary-color);
+  background-color: var(--bg-color);
+}
 
 h1 {
-    font-size: 3rem;
+  font-size: 3rem;
 }
+
 h2 {
-    font-size: 2.5rem;
+  font-size: 2.5rem;
 }
+
 h3 {
-    font-size: 2rem;
+  font-size: 2rem;
 }
+
 h4 {
-    font-size: 1.5rem;
+  font-size: 1.5rem;
 }
+
 h5 {
-    font-size: 1rem;
+  font-size: 1rem;
 }
+
 h6 {
-    font-size: 0.8rem;
+  font-size: 0.8rem;
 }
