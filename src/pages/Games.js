@@ -14,6 +14,12 @@ const GameContainer = styled.div`
     padding: 32px;
 `;
 
+const G = styled(Link)`
+    width: calc((100% - 128px) / 3);
+    text-decoration: none;
+    color: var(--primary-color);
+`;
+
 const Games = () => {
     let game = ["真心話大冒險", "酒司令", "終極密碼"];
     return (
@@ -21,15 +27,15 @@ const Games = () => {
             <Nav />
             <PageTitle title={"喝酒の小遊戲"} />
             <GameContainer className="gameContainer">
-                <Link to="/games/game1">
+                <G to="/games/game1">
                     <Game gameName={game[0]} gameIndex={1} />
-                </Link>
-                <Link to="/games/game2">
+                </G>
+                <G to="/games/game2">
                     <Game gameName={game[1]} gameIndex={2} />
-                </Link>
-                <Link to="/games/game3">
+                </G>
+                <G to="/games/game3">
                     <Game gameName={game[2]} gameIndex={3} />
-                </Link>
+                </G>
             </GameContainer>
         </>
     );

@@ -3,36 +3,37 @@ import styled from "@emotion/styled";
 // import Nav from "../../components/game/Nav";
 import NavInGamePage from "../components/game/NavInGamePage";
 import PageTitle from "../components/game/PageTitle";
+import "../styles/game/style.css";
 
-import t1 from "../images/mahjong/1筒.png";
-import t2 from "../images/mahjong/2筒.png";
-import t3 from "../images/mahjong/3筒.png";
-import t4 from "../images/mahjong/4筒.png";
-import t5 from "../images/mahjong/5筒.png";
-import t6 from "../images/mahjong/6筒.png";
-import t7 from "../images/mahjong/7筒.png";
-import t8 from "../images/mahjong/8筒.png";
-import t9 from "../images/mahjong/9筒.png";
+import t1 from "../img/mahjong/1筒.png";
+import t2 from "../img/mahjong/2筒.png";
+import t3 from "../img/mahjong/3筒.png";
+import t4 from "../img/mahjong/4筒.png";
+import t5 from "../img/mahjong/5筒.png";
+import t6 from "../img/mahjong/6筒.png";
+import t7 from "../img/mahjong/7筒.png";
+import t8 from "../img/mahjong/8筒.png";
+import t9 from "../img/mahjong/9筒.png";
 
-import w1 from "../images/mahjong/1萬.png";
-import w2 from "../images/mahjong/2萬.png";
-import w3 from "../images/mahjong/3萬.png";
-import w4 from "../images/mahjong/4萬.png";
-import w5 from "../images/mahjong/5萬.png";
-import w6 from "../images/mahjong/6萬.png";
-import w7 from "../images/mahjong/7萬.png";
-import w8 from "../images/mahjong/8萬.png";
-import w9 from "../images/mahjong/9萬.png";
+import w1 from "../img/mahjong/1萬.png";
+import w2 from "../img/mahjong/2萬.png";
+import w3 from "../img/mahjong/3萬.png";
+import w4 from "../img/mahjong/4萬.png";
+import w5 from "../img/mahjong/5萬.png";
+import w6 from "../img/mahjong/6萬.png";
+import w7 from "../img/mahjong/7萬.png";
+import w8 from "../img/mahjong/8萬.png";
+import w9 from "../img/mahjong/9萬.png";
 
-import i1 from "../images/mahjong/1條.png";
-import i2 from "../images/mahjong/2條.png";
-import i3 from "../images/mahjong/3條.png";
-import i4 from "../images/mahjong/4條.png";
-import i5 from "../images/mahjong/5條.png";
-import i6 from "../images/mahjong/6條.png";
-import i7 from "../images/mahjong/7條.png";
-import i8 from "../images/mahjong/8條.png";
-import i9 from "../images/mahjong/9條.png";
+import i1 from "../img/mahjong/1條.png";
+import i2 from "../img/mahjong/2條.png";
+import i3 from "../img/mahjong/3條.png";
+import i4 from "../img/mahjong/4條.png";
+import i5 from "../img/mahjong/5條.png";
+import i6 from "../img/mahjong/6條.png";
+import i7 from "../img/mahjong/7條.png";
+import i8 from "../img/mahjong/8條.png";
+import i9 from "../img/mahjong/9條.png";
 
 const Desc = styled.h3`
     text-align: center;
@@ -280,10 +281,7 @@ const Game3 = () => {
                                 <TdImg src={t9} alt="9" />
                             </Td>
                             <Td rowSpan={2} className="btnDelete">
-                                <TdImg
-                                    src={require("../images/mahjong/delete.png")}
-                                    alt={"delete"}
-                                />
+                                <TdImg src={require("../img/mahjong/delete.png")} alt={"delete"} />
                             </Td>
                         </tr>
                         <tr>
@@ -308,12 +306,12 @@ const Game3 = () => {
                                 <TdImg src={t3} alt="3" />
                             </Td>
                             <Td rowSpan={2} className="btnEnter">
-                                <TdImg src={require("../images/mahjong/發.png")} alt={"enter"} />
+                                <TdImg src={require("../img/mahjong/發.png")} alt={"enter"} />
                             </Td>
                         </tr>
                         <tr>
                             <Td colSpan={3} className="btn0">
-                                <TdImg src={require("../images/mahjong/零.png")} alt="0" />
+                                <TdImg src={require("../img/mahjong/零.png")} alt="0" />
                             </Td>
                         </tr>
                     </KeyBoard>
