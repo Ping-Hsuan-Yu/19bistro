@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "@emotion/styled";
-import logo from "../../images/logo.png";
-import Exit from "../../images/exit.png";
+import logo from "../../img/logo.png";
+import Exit from "../../img/exit.png";
 import { Link } from "react-router-dom";
 
 const Navbar = styled.nav`

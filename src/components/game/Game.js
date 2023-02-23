@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
-import game1 from "../../images/真心話大冒險.png";
-import game2 from "../../images/酒司令.png";
-import game3 from "../../images/終極密碼.png";
+import game1 from "../../img/真心話大冒險.png";
+import game2 from "../../img/酒司令.png";
+import game3 from "../../img/終極密碼.png";
 
 const GameLink = styled.a`
     width: calc((100% - 128px) / 3);

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import styled from "@emotion/styled";
 import NavInGamePage from "../components/game/NavInGamePage";
 import PageTitle from "../components/game/PageTitle";
-import bottle from "../images/bottle.png";
+import bottle from "../img/bottle.png";
 
 const BottleContainer = styled.div`
     text-align: center;
