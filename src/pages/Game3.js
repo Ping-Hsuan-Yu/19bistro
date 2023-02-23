@@ -39,11 +39,11 @@ const Desc = styled.h3`
     margin: 0;
     text-align: center;
     color: rgb(102, 102, 102);
-    font-size: 4.5rem;
+    font-size: 4rem;
 `;
 const Limit = styled.span`
     color: var(--primary-color);
-    font-size: 5rem;
+    font-size: 4rem;
 `;
 
 ////////////////////////////////////////////////////
@@ -65,6 +65,7 @@ const Input = styled.div`
 `;
 
 const InputValue = styled.h5`
+    margin: 0 60px;
     text-align: center;
     font-size: 7rem;
     color: var(--secondary-color);
