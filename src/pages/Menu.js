@@ -59,20 +59,19 @@ const Block = styled.div`
 function Menu() {
   const [mealDataList, setMealDataList] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState({ qty: 0, class: "" });
-  const [tableNum, setTableNum] = useState("A1");
-  const { table } = useParams;
+  const { table } = useParams();
+  // const [tableNum, setTableNum] = useState(table);
   const btnInner = {
-    href: "/cart/" + tableNum,
+    href: "/cart/" + table,
     text: "訂單",
   };
   let navigate = useNavigate();
-
   useEffect(() => {
     axios.get("http://localhost:1802/menu").then(function (response) {
       setMealDataList(response.data);
     });
     axios
-      .post("http://localhost:1802/totalquantity", { tableNum: tableNum })
+      .post("http://localhost:1802/totalquantity", { tableNum: table })
       .then(function (response) {
         if (response.data[0].quantity) {
           setTotalQuantity({ qty: response.data[0].quantity, class: "show" });
@@ -96,7 +95,7 @@ function Menu() {
               key={obj.itemNum}
               totalQuantity={totalQuantity}
               setTotalQuantity={setTotalQuantity}
-              tableNum={tableNum}
+              tableNum={table}
             />
           ))}
       </Wrap>
