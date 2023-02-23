@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import logo from "../img/Quiz/19-logo.png";
 import imgBox from "../img/Quiz/bartender.png";
 import imgIG from "../img/Quiz/IG.png";
@@ -10,6 +10,7 @@ import sun from "../img/Quiz/sun.png";
 import styled from "@emotion/styled";
 import "../styles/HomePage.css";
 import { useParams, useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Nav = styled.nav`
   display: flex;
@@ -70,58 +71,80 @@ const HomePage = () => {
   let navigate = useNavigate();
 
   return (
-    <div className={isActive ? "active" : "dark"}>
-      <Nav>
-        <Img
-          src={logo}
-          alt=""
-          onClick={() => {
-            navigate("/");
-          }}
-        />
-        <Button>服務鈴</Button>
-        <span
-          className={isActive ? "themeSwitch" : "themeSwitch active"}
-          onClick={handleToggle}
-        >
-          <img src={isActive ? moon : sun} alt="" />
-        </span>
-      </Nav>
-      <Main>
-        <div className="content">
-          <div className="textBox">
-            <H2>
-              宜酒心調
-              <br />
-              屬於你心中的<span>調酒</span>
-              <HP>藉由此心理測驗，找到你們的共同點，祝有情人終成眷屬</HP>
-            </H2>
+    <motion.div
+      initial="initialState"
+      animate="animateState"
+      exit="exitState"
+      transition={{
+        duration: 0.75,
+      }}
+      variants={{
+        initialState: {
+          opacity: 0,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        },
+        animateState: {
+          opacity: 1,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        },
+        exitState: {
+          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+        },
+      }}
+    >
+      <div className={isActive ? "active" : "dark"}>
+        <Nav>
+          <Img
+            src={logo}
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <Button>服務鈴</Button>
+          <span
+            className={isActive ? "themeSwitch" : "themeSwitch active"}
+            onClick={handleToggle}
+          >
+            <img src={isActive ? moon : sun} alt="" />
+          </span>
+        </Nav>
+        <Main>
+          <div className="content">
+            <div className="textBox">
+              <H2>
+                宜酒心調
+                <br />
+                屬於你心中的<span>調酒</span>
+                <HP>藉由此心理測驗，找到你們的共同點，祝有情人終成眷屬</HP>
+              </H2>
 
-            <Link to="/quizPage/transForm">前往測驗</Link>
+              <Link to="/quizPage/transForm">前往測驗</Link>
+            </div>
+            <div className="imgBox">
+              <img className="mainLogo" src={imgBox} alt="" />
+            </div>
           </div>
-          <div className="imgBox">
-            <img className="mainLogo" src={imgBox} alt="" />
-          </div>
-        </div>
-        <Sci className="sci">
-          <li>
-            <a href="/">
-              <img src={imgIG} alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <img src={imgFB} alt="" />
-            </a>
-          </li>
-          <li>
-            <a href="/">
-              <img src={imgLine} alt="" />
-            </a>
-          </li>
-        </Sci>
-      </Main>
-    </div>
+          <Sci className="sci">
+            <li>
+              <a href="/">
+                <img src={imgIG} alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img src={imgFB} alt="" />
+              </a>
+            </li>
+            <li>
+              <a href="/">
+                <img src={imgLine} alt="" />
+              </a>
+            </li>
+          </Sci>
+        </Main>
+      </div>
+    </motion.div>
   );
 };
 

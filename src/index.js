@@ -3,7 +3,11 @@ import ReactDOM from "react-dom/client";
 
 import "./styles/index.css";
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+  useLocation,
+} from "react-router-dom";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
 import Order from "./pages/Order";
@@ -15,6 +19,7 @@ import Games from "./pages/Games";
 import Game1 from "./pages/Game1";
 import Game2 from "./pages/Game2";
 import Game3 from "./pages/Game3";
+import { AnimatePresence } from "framer-motion";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +87,7 @@ const router = createBrowserRouter([
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <React.StrictMode>
     <RouterProvider router={router} />

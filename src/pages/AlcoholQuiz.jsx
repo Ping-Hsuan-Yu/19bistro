@@ -7,28 +7,33 @@ import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import logo from "../img/Quiz/19-logo.png";
 import styled from "@emotion/styled";
+import wall from "../img/Quiz/wall.jpg";
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "../styles/quiz.css";
 
-const Nav = styled.nav`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 80px;
-  background-color: var(--primary-color);
-  padding: 0 10%;
-`;
 const Img = styled.img`
   height: 60px;
   position: absolute;
   top: 10px;
   left: 50%;
   transform: translate(-50%, 0);
+  cursor: pointer;
 `;
 const Button = styled.button`
   padding: 10px;
   border: none;
   background-color: var(--bg-color);
+`;
+
+const Background = styled.div`
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: radial-gradient(#f00, rgba(0, 0, 0, 0.3)), url(${wall});
+  background-size: cover;
+  background-blend-mode: multiply;
+  z-index: -9999;
 `;
 
 const AlcoholQuiz = () => {
@@ -38,6 +43,24 @@ const AlcoholQuiz = () => {
   const [unansweredQuestionIds, setUnansweredQuestionIds] = useState(null);
   const [showAnswer, setShowAnswer] = useState(false);
   const [isActive, setActive] = useState("active");
+  const [navColor, setnavColor] = useState("var(--primary-color)");
+  const Nav = styled.nav`
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 80px;
+    background-color: ${navColor};
+    padding: 0 10%;
+    position: fixed;
+    width: 100%;
+    z-index: 9999;
+  `;
+
+  const listenScrollEvent = () => {
+    window.scrollY > 50
+      ? setnavColor("rgba(255, 0, 0, 0.5)")
+      : setnavColor("var(--primary-color)");
+  };
   const handleToggle = () => {
     setActive(!isActive);
   };
@@ -53,7 +76,7 @@ const AlcoholQuiz = () => {
     try {
       const response = await fetch("http://localhost:8080/quiz");
       const json = await response.json();
-      // console.log(json);
+      console.log(json);
       setQuiz(json);
     } catch (err) {
       console.log(err);
@@ -87,49 +110,79 @@ const AlcoholQuiz = () => {
   }, [unansweredQuestionIds, showAnswer, chosenAnswerItems, answerRef, refs]);
   // console.log(chosenAnswerItems);
   // console.log(unansweredQuestionIds);
+
+  // scroll bar
+  useEffect(() => {
+    window.addEventListener("scroll", listenScrollEvent);
+    return () => {
+      window.removeEventListener("scroll", listenScrollEvent);
+    };
+  }, []);
   return (
-    <div>
-      <Nav>
-        <Img
-          src={logo}
-          alt=""
-          onClick={() => {
-            navigate("/");
-          }}
-        />
-        <Button>服務鈴</Button>
-        <span
-          className={isActive ? "themeSwitch" : "themeSwitch active"}
-          onClick={handleToggle}
-        >
-          <img src={isActive ? moon : sun} alt="" />
-        </span>
-      </Nav>
-      <div className="quiz-body">
-        <div className="app">
-          <Title title={quiz?.title} subtitle={quiz?.subtitle} />
-          {refs &&
-            quiz?.content.map((contentItem) => (
-              <QuestionsBlock
-                key={contentItem.id}
-                quizItem={contentItem}
-                setChosenAnswerItems={setChosenAnswerItems}
-                chosenAnswerItems={chosenAnswerItems}
-                setUnansweredQuestionIds={setUnansweredQuestionIds}
-                unansweredQuestionIds={unansweredQuestionIds}
-                ref={refs[contentItem.id]}
+    <motion.div
+      initial="initialState"
+      animate="animateState"
+      exit="exitState"
+      transition={{
+        duration: 0.75,
+      }}
+      variants={{
+        initialState: {
+          opacity: 0,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        },
+        animateState: {
+          opacity: 1,
+          clipPath: "polygon(0 0, 100% 0, 100% 100%, 0% 100%)",
+        },
+        exitState: {
+          clipPath: "polygon(50% 0, 50% 0, 50% 100%, 50% 100%)",
+        },
+      }}
+    >
+      <Background>
+        <Nav>
+          <Img
+            src={logo}
+            alt=""
+            onClick={() => {
+              navigate("/");
+            }}
+          />
+          <Button>服務鈴</Button>
+          <span
+            className={isActive ? "themeSwitch" : "themeSwitch active"}
+            onClick={handleToggle}
+          >
+            <img src={isActive ? moon : sun} alt="" />
+          </span>
+        </Nav>
+        <div className="quiz-body">
+          <div className="app">
+            {/* <Title title={quiz?.title} subtitle={quiz?.subtitle} /> */}
+            {refs &&
+              quiz?.content.map((contentItem) => (
+                <QuestionsBlock
+                  key={contentItem.id}
+                  quizItem={contentItem}
+                  setChosenAnswerItems={setChosenAnswerItems}
+                  chosenAnswerItems={chosenAnswerItems}
+                  setUnansweredQuestionIds={setUnansweredQuestionIds}
+                  unansweredQuestionIds={unansweredQuestionIds}
+                  ref={refs[contentItem.id]}
+                />
+              ))}
+            {showAnswer && (
+              <AnswerBlock
+                answerOptions={quiz?.answers}
+                chosenAnswers={chosenAnswerItems}
+                ref={answerRef}
               />
-            ))}
-          {showAnswer && (
-            <AnswerBlock
-              answerOptions={quiz?.answers}
-              chosenAnswers={chosenAnswerItems}
-              ref={answerRef}
-            />
-          )}
+            )}
+          </div>
         </div>
-      </div>
-    </div>
+      </Background>
+    </motion.div>
   );
 };
 
