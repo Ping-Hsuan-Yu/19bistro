@@ -7,6 +7,7 @@ import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import logo from "../img/Quiz/19-logo.png";
 import styled from "@emotion/styled";
+import { useNavigate } from "react-router-dom";
 import "../styles/quiz.css";
 
 const Nav = styled.nav`
@@ -31,6 +32,7 @@ const Button = styled.button`
 `;
 
 const AlcoholQuiz = () => {
+  let navigate = useNavigate();
   const [quiz, setQuiz] = useState(null);
   const [chosenAnswerItems, setChosenAnswerItems] = useState([]);
   const [unansweredQuestionIds, setUnansweredQuestionIds] = useState(null);
@@ -88,7 +90,13 @@ const AlcoholQuiz = () => {
   return (
     <div>
       <Nav>
-        <Img src={logo} alt="" />
+        <Img
+          src={logo}
+          alt=""
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <Button>服務鈴</Button>
         <span
           className={isActive ? "themeSwitch" : "themeSwitch active"}

@@ -9,6 +9,7 @@ import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import styled from "@emotion/styled";
 import "../styles/HomePage.css";
+import { useParams, useNavigate } from "react-router-dom";
 
 const Nav = styled.nav`
   display: flex;
@@ -66,11 +67,18 @@ const HomePage = () => {
   const handleToggle = () => {
     setActive(!isActive);
   };
+  let navigate = useNavigate();
 
   return (
     <div className={isActive ? "active" : "dark"}>
       <Nav>
-        <Img src={logo} alt="" />
+        <Img
+          src={logo}
+          alt=""
+          onClick={() => {
+            navigate("/");
+          }}
+        />
         <Button>服務鈴</Button>
         <span
           className={isActive ? "themeSwitch" : "themeSwitch active"}
