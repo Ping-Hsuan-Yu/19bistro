@@ -1,0 +1,36 @@
+#TableAndSeat{
+    padding: 2%;
+    width: 100%;
+}
+
+.st2 {
+    font-weight: bold;
+    font-size: 48px;
+}
+
+.st0 {
+    fill: transparent;
+    stroke: var(--light-gray);
+    stroke-miterlimit: 10;
+}
+
+.st1 {
+    fill: transparent;
+    stroke: var(--gray);
+    stroke-miterlimit: 10;
+}
+
+.seated .st1{
+    fill: var(--seated);
+}
+
+.seated .st2 {
+    fill: white;
+}
+.called .st1{
+    fill: var(--called);
+}
+
+.called .st2 {
+    fill: white;
+}

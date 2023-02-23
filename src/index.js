@@ -15,6 +15,8 @@ import Games from "./pages/Games";
 import Game1 from "./pages/Game1";
 import Game2 from "./pages/Game2";
 import Game3 from "./pages/Game3";
+import Management from "./pages/Management"
+import Table from "./pages/Table"
 
 const router = createBrowserRouter([
   {
@@ -79,6 +81,20 @@ const router = createBrowserRouter([
     path: "/games/game3",
     element: <Game3 />,
   },
+  {
+    path: "/kitchen",
+    element: <Management />,
+  },
+  {
+    path: "/table",
+    element: <Table />,
+    children: [
+    {
+      path: '/table/:id',
+      element: <Table />
+    }
+    ]
+  }
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
