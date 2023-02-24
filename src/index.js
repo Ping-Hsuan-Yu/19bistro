@@ -83,20 +83,20 @@ const router = createBrowserRouter([
     path: "/games/game3",
     element: <Game3 />,
   },
-  {
-    path: "/kitchen",
-    element: <Management />,
-  },
-  {
-    path: "/table",
-    element: <Table />,
-    children: [
-      {
-        path: "/table/:id",
-        element: <Table />,
-      },
-    ],
-  },
+  // {
+  //   path: "/kitchen",
+  //   element: <Management />,
+  // },
+  // {
+  //   path: "/table",
+  //   element: <Table />,
+  //   children: [
+  //     {
+  //       path: "/table/:id",
+  //       element: <Table />,
+  //     },
+  //   ],
+  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

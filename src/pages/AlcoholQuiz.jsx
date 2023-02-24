@@ -74,10 +74,12 @@ const AlcoholQuiz = () => {
   console.log(refs);
   const fetchData = async () => {
     try {
-      const response = await fetch("http://localhost:8080/quiz");
+      const response = await fetch(
+        "https://raw.githubusercontent.com/Ping-Hsuan-Yu/19bistro/main/db.json"
+      );
       const json = await response.json();
       console.log(json);
-      setQuiz(json);
+      setQuiz(json.quiz);
     } catch (err) {
       console.log(err);
     }
