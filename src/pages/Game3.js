@@ -3,6 +3,7 @@ import styled from "@emotion/styled";
 // import Nav from "../../components/game/Nav";
 import NavInGamePage from "../components/game/NavInGamePage";
 import PageTitle from "../components/game/PageTitle";
+import "../styles/game/style.css";
 
 import t1 from "../img/mahjong/1筒.png";
 import t2 from "../img/mahjong/2筒.png";
@@ -35,13 +36,14 @@ import i8 from "../img/mahjong/8條.png";
 import i9 from "../img/mahjong/9條.png";
 
 const Desc = styled.h3`
+    margin: 0;
     text-align: center;
     color: rgb(102, 102, 102);
-    font-size: 4.5rem;
+    font-size: 4rem;
 `;
 const Limit = styled.span`
     color: var(--primary-color);
-    font-size: 5rem;
+    font-size: 4rem;
 `;
 
 ////////////////////////////////////////////////////
@@ -63,6 +65,7 @@ const Input = styled.div`
 `;
 
 const InputValue = styled.h5`
+    margin: 0 60px;
     text-align: center;
     font-size: 7rem;
     color: var(--secondary-color);
@@ -280,10 +283,7 @@ const Game3 = () => {
                                 <TdImg src={t9} alt="9" />
                             </Td>
                             <Td rowSpan={2} className="btnDelete">
-                                <TdImg
-                                    src={require("../img/mahjong/delete.png")}
-                                    alt={"delete"}
-                                />
+                                <TdImg src={require("../img/mahjong/delete.png")} alt={"delete"} />
                             </Td>
                         </tr>
                         <tr>
