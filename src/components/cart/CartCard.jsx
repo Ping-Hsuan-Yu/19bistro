@@ -43,7 +43,7 @@ const CartImg = styled.img`
   object-fit: contain;
 `;
 
-const CartCard = ({ dataList, totalQuantity, setTotalQuantity }) => {
+const CartCard = ({ dataList, totalQuantity, setTotalQuantity, Toast }) => {
   const totalQTY = totalQuantity.qty;
   const { quantity, mealName, price, image } = dataList;
   let imgsrc = encode(image.data);
@@ -68,9 +68,10 @@ const CartCard = ({ dataList, totalQuantity, setTotalQuantity }) => {
         });
       };
       if (qty === 1) {
-        // if (confirm("確？")) {
+        Toast.fire({
+          title: mealName + " 已刪除"
+        })
         minusOne();
-        // }
       } else {
         minusOne();
       }

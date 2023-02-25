@@ -7,6 +7,23 @@ import Nav from "../components/menu/Nav";
 import CartTabs from "../components/cart/CartTabs";
 import OrderCard from "../components/cart/OrderCard";
 import styled from "styled-components";
+import Swal from "sweetalert2";
+import 'animate.css';
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: 'animate__animated animate__slideInRight animate__faster'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp animate__faster'
+  }
+});
 
 const active = {
   cart: "",
@@ -62,7 +79,7 @@ function Order() {
   }, []);
   return (
     <>
-      <Nav btnInner={btnInner} totalQuantity={false} />
+      <Nav btnInner={btnInner} totalQuantity={false} Toast={Toast}/>
       <CartTabs
         active={active}
         table={table}

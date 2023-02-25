@@ -6,7 +6,23 @@ import Tab from "../components/menu/Tab";
 import Card from "../components/menu/Card";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import Swal from "sweetalert2";
+import 'animate.css';
 
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: 'animate__animated animate__slideInRight animate__faster'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutUp animate__faster'
+  }
+});
 const category = [
   { category: "A", title: "吃飽" },
   { category: "B", title: "燒烤酥炸" },
@@ -25,7 +41,7 @@ const Section = styled.section`
 `;
 
 const Title = styled.h3`
-margin:32px 0;
+  margin: 32px 0;
 `;
 
 const Wrap = styled.div`
@@ -96,6 +112,7 @@ function Menu() {
               totalQuantity={totalQuantity}
               setTotalQuantity={setTotalQuantity}
               tableNum={table}
+              Toast={Toast}
             />
           ))}
       </Wrap>
@@ -134,7 +151,7 @@ function Menu() {
         <option value="D4">D4</option>
       </select> */}
       <Fixed>
-        <Nav btnInner={btnInner} totalQuantity={totalQuantity} />
+        <Nav btnInner={btnInner} totalQuantity={totalQuantity} table={table} Toast={Toast}/>
         <Tabs>
           {category.map((obj) => (
             <Tab category={obj} key={obj.category} />

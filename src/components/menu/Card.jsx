@@ -3,6 +3,7 @@ import { encode } from "base64-arraybuffer";
 import axios from "axios";
 import styled from "styled-components";
 
+
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -54,32 +55,32 @@ const MenuInput = styled.div`
 `;
 
 const PlusMinus = styled.button`
-border: 0;
-    background: none;
-    color: white;
-    font-size: 1.2rem;
-`
+  border: 0;
+  background: none;
+  color: white;
+  font-size: 1.2rem;
+`;
 const InputQty = styled.input`
-background-color: var(--primary-color);
-    color: white;
-    border: 0;
-    font-size: 1.2rem;
-    width: 12px;
-    height: 26px;
-    padding: 0;
-    text-align: center;
-`
+  background-color: var(--primary-color);
+  color: white;
+  border: 0;
+  font-size: 1.2rem;
+  width: 12px;
+  height: 26px;
+  padding: 0;
+  text-align: center;
+`;
 
 const AddCartBtn = styled.button`
-background-color: var(--primary-color);
-color: white;
-border: 0;
-padding: 12px 32px;
-font-size: 1rem;
-font-weight: 700;
-`
+  background-color: var(--primary-color);
+  color: white;
+  border: 0;
+  padding: 12px 32px;
+  font-size: 1rem;
+  font-weight: 700;
+`;
 
-const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum }) => {
+const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum, Toast }) => {
   const { itemNum, mealName, price, mealDesc, image } = mealData;
   let imgsrc = encode(image.data);
 
@@ -89,7 +90,9 @@ const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum }) => {
 
   const addToCart = () => {
     setTotalQuantity({ qty: totalQuantity.qty + quantity, class: "show" });
-
+    Toast.fire({
+      title: `${mealName} x${quantity}`,
+    });
     axios.post("http://localhost:1802/addtocart", {
       tableNum: tableNum,
       itemNum: itemNum,
@@ -125,8 +128,8 @@ const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum }) => {
               <i className="bi bi-plus-lg"></i>
             </PlusMinus>
           </MenuInput>
-          <br/>
-          <br/>
+          <br />
+          <br />
           <AddCartBtn type="button" onClick={addToCart}>
             加入購物車
           </AddCartBtn>

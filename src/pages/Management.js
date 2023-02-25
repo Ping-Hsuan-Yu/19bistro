@@ -14,7 +14,7 @@ function Management() {
     axios.get("http://localhost:1802/tablenum").then((response) => {
       setTableNum(response.data);
     });
-  }, [orderInfo, tableNum]);
+  }, []);
   return (
     <>
       {orderInfo.length === 0 && <div className="empty"><span>Opps~ 尚無訂單!</span></div>}

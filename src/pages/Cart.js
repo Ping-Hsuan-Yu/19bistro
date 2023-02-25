@@ -7,6 +7,23 @@ import Nav from "../components/menu/Nav";
 import CartTabs from "../components/cart/CartTabs";
 import CartCard from "../components/cart/CartCard";
 import styled from "styled-components";
+import Swal from "sweetalert2";
+import "animate.css";
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: "animate__animated animate__slideInRight animate__faster",
+  },
+  hideClass: {
+    popup: "animate__animated animate__fadeOutUp animate__faster",
+  },
+});
 
 const active = {
   cart: "active-scroll-spy",
@@ -64,14 +81,16 @@ function Cart() {
 
   let navigate = useNavigate();
   const sendOrder = () => {
+    Toast.fire({
+      title: "訂單已送出",
+    });
     axios.post("http://localhost:1802/sendorder", { tableNum: table });
-    alert("訂單已送出");
-    navigate("/menu");
+    navigate("/menu/" + table);
   };
 
   return (
     <>
-      <Nav btnInner={btnInner} totalQuantity={false} />
+      <Nav btnInner={btnInner} totalQuantity={false} Toast={Toast} />
       <CartTabs
         active={active}
         table={table}
@@ -85,6 +104,7 @@ function Cart() {
             key={obj.itemNum}
             totalQuantity={totalQuantity}
             setTotalQuantity={setTotalQuantity}
+            Toast={Toast}
           />
         ))}
       </Container>

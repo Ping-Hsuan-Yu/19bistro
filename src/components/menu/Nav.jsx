@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import logo from "../../img/19nav.svg";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 const NavBar = styled.nav`
   display: flex;
@@ -29,9 +30,15 @@ const Img = styled.img`
   transform: translate(-50%, 0);
 `;
 
-const Nav = ({ btnInner, totalQuantity }) => {
+const Nav = ({ btnInner, totalQuantity, table, Toast }) => {
   const { href, text } = btnInner;
   let navigate = useNavigate();
+  const callServer = () => {
+    axios.post("http://localhost:1802/callserver", { tableNum: table });
+    Toast.fire({
+      title: "已呼叫服務人員，請耐心等候",
+    });
+  };
   return (
     <NavBar>
       <Img
@@ -41,13 +48,7 @@ const Nav = ({ btnInner, totalQuantity }) => {
           navigate("/");
         }}
       />
-      <Button
-        onClick={() => {
-          alert("!");
-        }}
-      >
-        服務鈴
-      </Button>
+      <Button onClick={callServer}>服務鈴</Button>
       <Button
         onClick={() => {
           navigate(href);
