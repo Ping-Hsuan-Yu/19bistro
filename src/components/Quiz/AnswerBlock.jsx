@@ -21,7 +21,7 @@ const AnswerBlock = ({ answerOptions, chosenAnswers }, ref) => {
   console.log(result);
   return (
     <div ref={ref} className="answer-block">
-      <h2 className="quiz-h2">{result?.text}</h2>
+      {/* <h2 className="quiz-h2">{result?.text}</h2> */}
       <img src={result?.img} alt={result?.text} />
     </div>
   );
