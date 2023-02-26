@@ -19,6 +19,7 @@ import Games from "./pages/Games";
 import Game1 from "./pages/Game1";
 import Game2 from "./pages/Game2";
 import Game3 from "./pages/Game3";
+import Drink from "./pages/Drink";
 
 const router = createBrowserRouter([
   {
@@ -82,6 +83,10 @@ const router = createBrowserRouter([
   {
     path: "/games/game3",
     element: <Game3 />,
+  },
+  {
+    path: "/drink",
+    element: <Drink />,
   },
   // {
   //   path: "/kitchen",

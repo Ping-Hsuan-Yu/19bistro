@@ -1,9 +1,12 @@
 import React from "react";
-import styled from 'styled-components';
+import styled from "styled-components";
 
 import calendar from "./lunarcalendar";
 import SmallCalender from "./SmallCalender";
 import Weather from "./Weather";
+import ChatroomPage from "./Chatroom";
+import io from "socket.io-client";
+import { useEffect, useState } from "react";
 
 const Container = styled.div`
   display: flex;
@@ -52,6 +55,32 @@ const Chatroom = styled.div`
 `;
 
 const BigCalender = () => {
+  const [socket, setSocket] = useState(null);
+
+  const setupSocket = () => {
+    const token = localStorage.getItem("CC_Token");
+    if (token && !socket) {
+      const newSocket = io("http://localhost:8000", {
+        query: {
+          token: localStorage.getItem("CC_Token"),
+        },
+      });
+
+      newSocket.on("disconnect", () => {
+        setSocket(null);
+        setTimeout(setupSocket, 3000);
+      });
+
+      newSocket.on("connect", () => {});
+      setSocket(newSocket);
+    }
+  };
+
+  useEffect(() => {
+    setupSocket();
+    //eslint-disable-next-line
+  }, []);
+
   const monthsName = [
     ["January", "一月"],
     ["February", "二月"],
@@ -98,7 +127,9 @@ const BigCalender = () => {
         <Rightdiv>
           <Rightdivh4>{today.getFullYear()}</Rightdivh4>
           <Rightdivh4>{ltoday.gzYear}</Rightdivh4>
-          <Chatroom></Chatroom>
+          <Chatroom>
+            <ChatroomPage socket={socket} />
+          </Chatroom>
         </Rightdiv>
       </Thirds>
     </Container>
