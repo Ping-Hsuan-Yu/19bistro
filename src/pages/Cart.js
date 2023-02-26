@@ -90,7 +90,7 @@ function Cart() {
 
   return (
     <>
-      <Nav btnInner={btnInner} totalQuantity={false} Toast={Toast} />
+      <Nav btnInner={btnInner} totalQuantity={false} table={table} Toast={Toast} />
       <CartTabs
         active={active}
         table={table}

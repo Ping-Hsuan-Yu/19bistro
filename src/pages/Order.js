@@ -25,6 +25,20 @@ const Toast = Swal.mixin({
   }
 });
 
+const CheckoutAlert = Swal.mixin({
+  title: "<h4>已通知櫃檯人員，請直接至櫃檯結帳。</h4><h4>離開前請記得隨身物品。</h4><h4>酒後不開車，安全有保障。</h4>",
+  position: "center",
+  showConfirmButton: false,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: 'animate__animated animate__fadeInDown animate__fast'
+  },
+  hideClass: {
+    popup: 'animate__animated animate__fadeOutDown animate__fast'
+  }
+})
+
 const active = {
   cart: "",
   order: "active-scroll-spy",
@@ -79,7 +93,7 @@ function Order() {
   }, []);
   return (
     <>
-      <Nav btnInner={btnInner} totalQuantity={false} Toast={Toast}/>
+      <Nav btnInner={btnInner} totalQuantity={false} table={table} Toast={Toast}/>
       <CartTabs
         active={active}
         table={table}
@@ -94,7 +108,7 @@ function Order() {
       <CheckoutBtn
         style={{ display: Btn }}
         type="button"
-        onClick={()=>{alert("!")}}
+        onClick={()=>{CheckoutAlert.fire()}}
       >
         結帳
       </CheckoutBtn>
