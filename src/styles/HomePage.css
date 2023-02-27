@@ -16,8 +16,7 @@
   --bg-color: #e5e1d8;
   --primary-color: #b22c27;
   --secondary-color: #2c4c7b;
-  --body-font-family: "Noto Sans", "Noto Sans TC", system-ui,
-    sans-serif;
+  --body-font-family: "Noto Sans", "Noto Sans TC", system-ui, sans-serif;
 }
 
 .dark {
@@ -89,39 +88,39 @@ header ul li a:hover {
 }
 
 /* 內容 */
-.content {
+/* .content {
   position: relative;
   width: 100%;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
   z-index: 2;
-}
+} */
 
 /* 文字框 */
-.content .textBox {
+.textBox {
   position: relative;
   max-width: 600px;
   z-index: 2;
   margin-bottom: 10rem;
 }
-.content .textBox p {
+/* .content .textBox p {
   color: var(--black);
-}
+} */
 
-.content .textBox h2 {
+/* .content .textBox h2 {
   font-size: 3em;
   color: var(--black);
   line-height: 1.4em;
   font-weight: 400;
-}
+} */
 
-.content .textBox h2 span {
+.textBox h2 span {
   font-size: 1.2em;
   color: var(--red);
 }
 
-.content .textBox a {
+.textBox a {
   display: inline-block;
   padding: 8px 20px;
   background-color: var(--red);
@@ -130,31 +129,32 @@ header ul li a:hover {
   font-weight: 500;
   letter-spacing: 1px;
   text-decoration: none;
+  margin-left: 3.5rem;
 }
 
-.content .textBox a:hover {
+.textBox a:hover {
   background-color: palevioletred;
 }
 
 /* 主圖片 */
-.content .imgBox {
+.imgBox {
   position: relative;
-  width: 25rem;
+  width: 50rem;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.content .imgBox::before {
+.imgBox::before {
   content: "";
   position: absolute;
-  width: 350px;
-  height: 350px;
+  width: 400px;
+  height: 400px;
   border-radius: 50%;
   background-color: var(--red);
 }
 
-.content .imgBox .mainLogo {
+.imgBox .mainLogo {
   position: absolute;
   z-index: 1;
   max-width: 28rem;
@@ -165,7 +165,7 @@ header ul li a:hover {
   transition: all 0.75s ease-out;
 }
 
-.content .imgBox .mainLogo:hover {
+.imgBox .mainLogo:hover {
   transform: scale(1.1, 1.1);
 }
 
