@@ -4,11 +4,12 @@ import Table from "../components/drink/Table";
 function Drink() {
   return (
     <>
-      <div className="mb-5">
+      <div style={{ marginBottom: "40px" }}>
         <Navber />
       </div>
-
-      <Table />
+      <div style={{ padding: "40px" }}>
+        <Table />
+      </div>
     </>
   );
 }

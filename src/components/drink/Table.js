@@ -1,12 +1,156 @@
 import React from "react";
 import axios from "axios";
 import makeToast from "./Toaster";
-import Button from "react-bootstrap/Button";
-import Modal from "react-bootstrap/Modal";
-import Col from "react-bootstrap/Col";
-import Form from "react-bootstrap/Form";
-import Row from "react-bootstrap/Row";
+import logo from "../../img/19nav.svg";
+
 import styled from "styled-components";
+
+const Popups = styled.div`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.2);
+`;
+const Img = styled.img`
+  width: 80px;
+  transform: translate(-50%, 0);
+  margin-left: 80px;
+`;
+
+const Signupmodal = styled.div`
+
+font-family: "Roboto", arial, sans-serif;
+color: #fefefe;
+border-style: solid;
+border-width: 10px;
+border-color: rgb(254, 254, 254);
+border-radius: 10px 10px 10px 10px;
+background-color: #b22c27;
+width: 90%;
+min-width: 400px;
+max-width: 700px;
+margin: 0 auto;
+padding: 25px;
+
+
+}
+`;
+
+const Closemodalbutton = styled.div`
+border-radius: 50%;
+width: 50px;
+height: 50px;
+background-color: #d26960;
+float: right;
+position: relative;
+top: -55px;
+left: 50px;
+cursor: pointer;
+&:before {
+  content: "\2716";
+  font-size: 1.5em;
+  position: relative;
+  top: 10px;
+  left: 17px;
+}
+`;
+
+const Form = styled.form`
+  margin: 0 auto;
+  text-align: center;
+`;
+
+const Inputcontainer = styled.div`
+  margin: 10px;
+`;
+
+const Inputtext = styled.input`
+  font-weight: 700;
+  font-size: 1.4em;
+  padding: 10px;
+  border-width: 2px;
+  border-color: rgba(247, 247, 247, 0.3);
+  border-style: solid;
+  background: url("transparent");
+  outline: 0;
+  color: #fefefe;
+  opacity: 1;
+  &:focus {
+    color: #111;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+  &:focus {
+    background: white;
+    transition: all 0.3s ease;
+    color: #222;
+  }
+`;
+
+const Select = styled.select`
+  outline: 0;
+  font-weight: 700;
+  font-size: 1.4em;
+  padding: 10px;
+  border-width: 2px;
+  border-color: rgba(247, 247, 247, 0.3);
+  border-style: solid;
+  background: url("transparent");
+  color: #fefefe;
+  opacity: 1;
+  color: #fefefe;
+  opacity: 1;
+  &:focus {
+    color: #111;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+  &:focus {
+    color: #111;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+    background: white;
+    transition: all 0.3s ease;
+    color: #222;
+  }
+`;
+
+const Inputsubmit = styled.input`
+  color: #fefefe;
+  opacity: 1;
+  &:focus {
+    color: #111;
+    opacity: 0.5;
+    transition: all 0.3s ease;
+  }
+  font-weight: 700;
+  font-size: 1.8em;
+  color: #111;
+  background: #fefefe;
+  box-shadow: 0px 4px 0px 0px #d26a60;
+  border-style: none;
+  padding: 10px 50px;
+  margin: 50px 0 30px 0;
+  position: relative;
+  display: inline-block;
+  transition: all 0.1s linear;
+  &:active {
+    box-shadow: 0 2px 0 #d26a60;
+    transform: translateY(3px);
+    -webkit-transform: translateY(3px);
+    -ms-transform: translateY(3px);
+  }
+`;
+
+// .logo {
+//   fill: #fefefe;
+// }
+
+const Logocontainer = styled.div`
+  width: 100%;
+  margin-top: 50px;
+  position: relative;
+  text-align: center;
+`;
 
 const Div = styled.div`
   .st2 {
@@ -33,10 +177,99 @@ const Div = styled.div`
   }
 `;
 
+const Popup = (props) => {
+  return props.trigger ? (
+    <Popups
+      style={{
+        position: "fixed",
+        left: "50%",
+        top: "50%",
+        paddingTop: "7%",
+        transform: "translate(-50%, -50%)",
+      }}
+    >
+      <Signupmodal>
+        <Closemodalbutton onClick={() => props.setButtonPop(false)}>
+          x
+        </Closemodalbutton>
+
+        <Logocontainer>
+          <Img src={logo} />
+        </Logocontainer>
+
+        <Form>
+          <Inputcontainer
+            style={{
+              display: "flex",
+              justifyContent: "space-around",
+              marginTop: "50px",
+            }}
+          >
+            <div style={{ width: "40%" }}>
+              <label for="" style={{ marginBottom: "10px" }}>
+                桌號
+              </label>
+              <Inputtext
+                id="username"
+                type="text"
+                placeholder="桌號"
+                maxlength="8"
+                style={{ width: "100%" }}
+                defaultValue={props.btnValue}
+                ref={props.tabelRef}
+              />
+            </div>
+            <div style={{ width: "40%" }}>
+              <label for="" style={{ marginBottom: "10px" }}>
+                品項
+              </label>
+              <Select style={{ width: "100%" }} ref={props.itemRef}>
+                <option>請選擇品項</option>
+                <option>夕陽餘暉</option>
+                <option>漂亮美莓</option>
+                <option>戀夏五百日</option>
+                <option>Mojito</option>
+                <option>老派滋味</option>
+                <option>草莓蛋糕</option>
+                <option>鳳梨冰茶</option>
+                <option>藍莓派</option>
+                <option>烏蘇拉</option>
+                <option>常倒冰茶</option>
+              </Select>
+            </div>
+          </Inputcontainer>
+          <div style={{ width: "100%", marginTop: "30px" }}>
+            <label for="" style={{ width: "85%", marginBottom: "10px" }}>
+              想對他/她說什麼
+            </label>
+            <Inputtext
+              id="email"
+              type="text"
+              placeholder="想對他/她說什麼"
+              style={{ width: "85%" }}
+              ref={props.messageRef}
+            />
+          </div>
+
+          <Inputsubmit
+            id="sign-up-button"
+            type="button"
+            value="送出"
+            onClick={props.registerUser}
+          />
+        </Form>
+      </Signupmodal>
+    </Popups>
+  ) : (
+    ""
+  );
+};
+
 const ForMessage = ({ match, socket }) => {
   const [btnValue, setBtnValue] = React.useState();
   const D3 = React.useRef("");
   const [forD3, setForD3] = React.useState();
+  const [buttonPop, setButtonPop] = React.useState(false);
 
   React.useEffect(() => {
     setForD3(D3.current.innerHTML);
@@ -64,7 +297,7 @@ const ForMessage = ({ match, socket }) => {
       orderTable: number,
       deliverTable: tabel,
     });
-
+    setButtonPop(false);
     setModalShow(false);
     axios
       .post(
@@ -89,88 +322,24 @@ const ForMessage = ({ match, socket }) => {
       });
   };
 
-  function MyVerticallyCenteredModal(props) {
-    const [validated, setValidated] = React.useState(false);
-
-    const handleSubmit = (event) => {
-      const form = event.currentTarget;
-      if (form.checkValidity() === false) {
-        event.preventDefault();
-        event.stopPropagation();
-      }
-
-      setValidated(true);
-    };
-
-    return (
-      <Modal
-        {...props}
-        aria-labelledby="contained-modal-title-vcenter"
-        centered
-      >
-        <Modal.Header closeButton style={{ background: "#B22C27" }}>
-          <Modal.Title id="contained-modal-title-vcenter">
-            想要請酒的對象
-          </Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form noValidate validated={validated} onSubmit={handleSubmit}>
-            <Row className="mb-3">
-              <Form.Group as={Col} md="4" controlId="validationCustom01">
-                <Form.Label style={{ color: "#B22C27" }}>桌號</Form.Label>
-                <Form.Control
-                  required
-                  type="text"
-                  defaultValue={btnValue}
-                  ref={tabelRef}
-                  disabled
-                />
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group as={Col} md="4" controlId="validationCustom02">
-                <Form.Label style={{ color: "#B22C27" }}>要請的酒</Form.Label>
-                <Form.Select aria-label="Default select example" ref={itemRef}>
-                  <option selected disabled defaultValue="">
-                    請選擇品項...
-                  </option>
-                  <option value="夕陽餘暉">夕陽餘暉</option>
-                  <option value="漂亮美莓">漂亮美莓</option>
-                  <option value="戀下五百日">戀下五百日</option>
-                </Form.Select>
-                <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
-              </Form.Group>
-            </Row>
-            <Form.Group
-              className="mb-3"
-              controlId="exampleForm.ControlTextarea1"
-            >
-              <Form.Label style={{ color: "#B22C27" }}>
-                想對他/她說什麼
-              </Form.Label>
-              <Form.Control as="textarea" rows={3} ref={messageRef} />
-            </Form.Group>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button
-            style={{ width: "100%", background: "#B22C27" }}
-            onClick={registerUser}
-          >
-            送出
-          </Button>
-        </Modal.Footer>
-      </Modal>
-    );
-  }
-
   const open = (e) => {
     setModalShow(true);
     setBtnValue(e.target.id);
+    setButtonPop(true);
   };
 
   return (
     <>
       <Div>
+        <Popup
+          tabelRef={tabelRef}
+          trigger={buttonPop}
+          setButtonPop={setButtonPop}
+          btnValue={btnValue}
+          itemRef={itemRef}
+          messageRef={messageRef}
+          registerUser={registerUser}
+        />
         <div className="container">
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -701,11 +870,6 @@ const ForMessage = ({ match, socket }) => {
               </text>
             </g>
           </svg>
-
-          <MyVerticallyCenteredModal
-            show={modalShow}
-            onHide={() => setModalShow(false)}
-          />
         </div>
       </Div>
     </>
