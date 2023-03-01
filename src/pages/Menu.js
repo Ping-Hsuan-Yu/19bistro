@@ -64,6 +64,7 @@ const Tabs = styled.ul`
   overflow-x: auto;
   overflow-y: hidden;
   margin: 0;
+  justify-content: space-between;
 `;
 
 const Block = styled.div`
