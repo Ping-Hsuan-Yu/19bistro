@@ -6,7 +6,6 @@ import "./styles/index.css";
 import {
   createBrowserRouter,
   RouterProvider,
-  useLocation,
 } from "react-router-dom";
 import Menu from "./pages/Menu";
 import Cart from "./pages/Cart";
@@ -88,20 +87,6 @@ const router = createBrowserRouter([
     path: "/drink",
     element: <Drink />,
   },
-  // {
-  //   path: "/kitchen",
-  //   element: <Management />,
-  // },
-  // {
-  //   path: "/table",
-  //   element: <Table />,
-  //   children: [
-  //     {
-  //       path: "/table/:id",
-  //       element: <Table />,
-  //     },
-  //   ],
-  // },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
