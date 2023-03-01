@@ -1,6 +1,5 @@
 import React from "react";
 import { useState, useEffect, createRef } from "react";
-import Title from "../components/Quiz/Title";
 import QuestionsBlock from "../components/Quiz/QuestionsBlock";
 import AnswerBlock from "../components/Quiz/AnswerBlock";
 import moon from "../img/Quiz/moon.png";
@@ -21,11 +20,13 @@ const Img = styled.img`
   cursor: pointer;
 `;
 const Button = styled.button`
-  padding: 10px;
-  border: none;
   background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 0;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-weight: 500;
 `;
-
 const Background = styled.div`
   justify-content: center;
   align-items: center;

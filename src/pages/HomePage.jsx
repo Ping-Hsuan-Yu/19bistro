@@ -8,7 +8,6 @@ import imgFB from "../img/Quiz/FB.png";
 import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import smoke from "../img/Quiz/smoke.png";
-// import styled from "@emotion/styled";
 import styled, { keyframes } from "styled-components";
 import "../styles/HomePage.css";
 import { useParams, useNavigate } from "react-router-dom";
@@ -30,9 +29,12 @@ const Img = styled.img`
   transform: translate(-50%, 0);
 `;
 const Button = styled.button`
-  padding: 10px;
-  border: none;
   background-color: var(--bg-color);
+  color: var(--primary-color);
+  border: 0;
+  padding: 10px 32px;
+  font-size: 1rem;
+  font-weight: 500;
 `;
 
 // 煙霧效果
@@ -190,13 +192,58 @@ const HP = styled.p`
   color: var(--black);
 `;
 
-const Sci = styled.ul`
+const Sci = styled.div`
   position: absolute;
-  bottom: 2rem;
+  justify-content: center;
+  align-items: center;
+  bottom: 1.2rem;
   display: flex;
-  left: 2rem;
+  left: 11rem;
   z-index: 2;
 `;
+
+// const BG = styled.div`
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   min-height: 700px;
+//   background-color: #333;
+// `;
+
+// const StartEffect = keyframes`
+//   0% {
+//     transform: rotateX(-20deg) rotateY(360deg);
+//   }
+//   100% {
+//     transform: rotateX(-20deg) rotateY(0deg);
+//   }
+// `;
+
+// const StartButtonBox = styled.div`
+//   position: relative;
+//   height: 200px;
+//   transform-style: preserve-3d;
+//   animation: ${StartEffect} 16s linear infinite;
+// `;
+
+// const StartButtonBlock = styled.div`
+//   position: absolute;
+//   inset: 0;
+//   transform-style: preserve-3d;
+// `;
+
+// const StartContent = styled.span`
+//   position: absolute;
+//   left: calc(50% - 100px);
+//   width: 200px;
+//   height: 100px;
+//   background: #444;
+//   transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
+// `;
+
+// const StartText = styled.div``;
+
+// const StartTextContent = styled.span``;
 
 const HomePage = () => {
   const [isActive, setActive] = useState("active");
@@ -256,7 +303,7 @@ const HomePage = () => {
                 </HP>
               </H2>
 
-              <Link to="/quizPage/transForm">前往測驗</Link>
+              {/* <Link to="/quizPage/transForm">前往測驗</Link> */}
             </div>
             <div className="imgBox">
               <img className="mainLogo" src={imgBox} alt="" />
@@ -274,8 +321,13 @@ const HomePage = () => {
               </SmokeWrap>
             </div>
           </Content>
-          <Sci className="sci">
-            <li>
+          <Sci
+            className="sci"
+            onClick={() => {
+              navigate("/quizPage/transForm");
+            }}
+          >
+            {/* <li>
               <a href="/">
                 <img src={imgIG} alt="" />
               </a>
@@ -289,7 +341,29 @@ const HomePage = () => {
               <a href="/">
                 <img src={imgLine} alt="" />
               </a>
-            </li>
+            </li> */}
+            <div className="box">
+              <div className="block">
+                <span style={{ "--i": 0 }}></span>
+                <span style={{ "--i": 1 }}></span>
+                <span style={{ "--i": 2 }}></span>
+                <span style={{ "--i": 3 }}></span>
+              </div>
+              <div className="text">
+                <span style={{ "--i": 0 }} data-text="點">
+                  點
+                </span>
+                <span style={{ "--i": 1 }} data-text="我">
+                  我{" "}
+                </span>
+                <span style={{ "--i": 2 }} data-text="測">
+                  測
+                </span>
+                <span style={{ "--i": 3 }} data-text="驗">
+                  驗
+                </span>
+              </div>
+            </div>
           </Sci>
         </Main>
       </div>
