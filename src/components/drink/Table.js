@@ -291,11 +291,12 @@ const ForMessage = ({ match, socket }) => {
     const message = messageRef.current.value;
     itemRef.current.value = "";
     messageRef.current.value = "";
-
+                //addToCart用過了 看要不要改buyudrink
     axios.post("http://localhost:1802/addtocart", {
       itemNum: item,
       orderTable: number,
       deliverTable: tabel,
+      // 需要一個 remark 把備註記錄到資料庫中
     });
     setButtonPop(false);
     setModalShow(false);
