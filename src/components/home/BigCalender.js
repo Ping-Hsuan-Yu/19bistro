@@ -95,8 +95,8 @@ const BigCalender = () => {
     ["November", "十一月"],
     ["December", "十二月"],
   ];
-  let today = new Date();
-  let ltoday = calendar.solar2lunar();
+  let today = new Date(2023,2,14);
+  let ltoday = calendar.solar2lunar(2023,2,14);
 
   function ldate() {
     if (ltoday.vacation) {
@@ -122,7 +122,8 @@ const BigCalender = () => {
         <Middlediv>
           <Daytext>{ltoday.ncWeek}</Daytext>
           <Datetext>{today.getDate()}</Datetext>
-          <Ldatetext>{ldate()}</Ldatetext>
+          {/* <Ldatetext>{ldate()}</Ldatetext> */}
+          <Ldatetext>情人節</Ldatetext>
         </Middlediv>
         <Rightdiv>
           <Rightdivh4>{today.getFullYear()}</Rightdivh4>
