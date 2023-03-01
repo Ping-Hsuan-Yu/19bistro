@@ -31,6 +31,7 @@ const Nav = styled.nav`
     padding: 0 10%;
 `;
 const Img = styled.img`
+    transition: 3.8s ease;
     height: 60px;
     position: absolute;
     top: 10px;
@@ -46,11 +47,13 @@ const Button = styled.button`
     font-weight: 500;
 `;
 
-const Navbar = () => {
+const Navbar = ({ angle }) => {
     let navigate = useNavigate();
+    console.log(angle);
     return (
         <Nav>
             <Img
+                style={{ transform: `translate(-50%, 0) rotate(${angle}deg)` }}
                 src={logo}
                 alt=""
                 onClick={() => {

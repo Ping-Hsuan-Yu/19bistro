@@ -62,7 +62,7 @@ const Game2 = () => {
 
     return (
         <>
-            <NavInGamePage />
+            <NavInGamePage angle={angle} />
             <PageTitle title={"酒司令"} />
             <Desc>- 轉到你就喝，賣拷貝 -</Desc>
             <BottleContainer>
