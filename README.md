@@ -7,7 +7,7 @@ Four functions on this page.
 * Show real-time weather
 * Show date and festival
 * Chatroom
-* Links to page of menus, games, treat you drinks and quizzes 
+* Links to page of menus, games, treat you drinks and quiz
 
 
 ## Menu
@@ -23,3 +23,6 @@ Offer games that guests can play while drinking
 * Truth or dare
 * Roulette
 * Ultimate code
+
+## Quiz
+Recommend a personalized cocktail using a psychological test
