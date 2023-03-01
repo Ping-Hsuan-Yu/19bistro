@@ -141,10 +141,11 @@ const Game1 = () => {
                     <Type selected disabled>
                         請選擇
                     </Type>
-                    <Type value={"麻吉版"}>麻吉版</Type>
-                    <Type value={"職場版"}>職場版</Type>
-                    <Type value={"學生版"}>學生版</Type>
-                    <Type value={"成人版"}>成人版</Type>
+                    <Type value={"初識拉"}>初識拉</Type>
+                    <Type value={"死黨"}>死黨</Type>
+                    <Type value={"慣老闆"}>慣老闆</Type>
+                    <Type value={"戀愛ing"}>戀愛ing</Type>
+                    <Type value={"不可以色色"}>不可以色色</Type>
                 </SelectType>
             </QuestionBanner>
             <ButtonContainer>
