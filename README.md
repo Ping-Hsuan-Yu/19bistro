@@ -2,7 +2,7 @@
 A website that provides customers with ordering, games, chat room, cocktail recommendations, and simplifies the restaurant's delivery process
   
   
-## Homepage
+### Homepage
 Four functions on this page.
 * Show real-time weather
 * Show date and festival
