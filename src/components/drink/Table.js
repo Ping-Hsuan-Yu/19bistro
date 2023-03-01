@@ -171,8 +171,8 @@ const Div = styled.div`
   }
 
   .st4 {
-    fill: #ff8000;
-    stroke: #ff8000;
+    fill: #b22c27;
+    stroke: #b22c27;
     stroke-miterlimit: 10;
   }
 `;
@@ -386,13 +386,12 @@ const ForMessage = ({ match, socket }) => {
               <path
                 id="D3"
                 d="M225.5 703.6H84.9v140.6h140.6V703.6z"
-                className={forD3 === payload.name ? "st4" : "st1"}
+                className="st1"
               ></path>
               <text
                 id="D3"
                 className="st2 st3"
                 transform="translate(124.203 793.058)"
-                ref={D3}
               >
                 D3
               </text>
@@ -416,12 +415,13 @@ const ForMessage = ({ match, socket }) => {
               <path
                 id="D2"
                 d="M225.5 394.2H84.9v140.6h140.6V394.2z"
-                className="st1"
+                className={forD3 === payload.name ? "st4" : "st1"}
               ></path>
               <text
                 id="D2"
                 className="st2 st3"
                 transform="translate(124.203 483.683)"
+                ref={D3}
               >
                 D2
               </text>
