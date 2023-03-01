@@ -6,7 +6,7 @@ import bottle from "../img/bottle.png";
 
 const BottleContainer = styled.div`
     text-align: center;
-    margin: 6rem 0;
+    margin: 4.5rem 0;
 `;
 
 const BottleImg = styled.img`

@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "@emotion/styled";
 
-import Navber from "../components/home/Navber";
+// import Navber from "../components/home/Navber";
+import Navbar from "../components/game/Navbar";
 
 import Game from "../components/game/Game";
 import PageTitle from "../components/game/PageTitle";
@@ -26,7 +27,7 @@ const Games = () => {
     let game = ["真心話大冒險", "酒司令", "終極密碼"];
     return (
         <>
-            <Navber />
+            <Navbar />
             <PageTitle title={"喝酒の小遊戲"} />
             <GameContainer className="gameContainer">
                 <G to="/games/game1">

@@ -53,7 +53,6 @@ const Board = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 `;
 
 const Input = styled.div`
