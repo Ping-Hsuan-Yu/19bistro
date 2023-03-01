@@ -1,7 +1,7 @@
 # 19bistro
 A website provides guests with food ordering, games, interactive functions, and simplifies the meal delivery process for our restaurant.
 
-### Homepage
+## Homepage
 Four functions on this page.
 * Show real-time weather
 * Show dates and festivals
