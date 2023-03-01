@@ -123,7 +123,7 @@ const BigCalender = () => {
           <Daytext>{ltoday.ncWeek}</Daytext>
           <Datetext>{today.getDate()}</Datetext>
           {/* <Ldatetext>{ldate()}</Ldatetext> */}
-          <Ldatetext>情人節</Ldatetext>
+          <Ldatetext>白色情人節</Ldatetext>
         </Middlediv>
         <Rightdiv>
           <Rightdivh4>{today.getFullYear()}</Rightdivh4>
