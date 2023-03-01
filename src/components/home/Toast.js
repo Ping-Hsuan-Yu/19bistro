@@ -178,6 +178,7 @@ const App = () => {
   const [messageAll, setMessageAll] = React.useState([]);
   const token = localStorage.getItem("CC_Token");
   const payload = JSON.parse(atob(token.split(".")[1]));
+  // console.log(messageAll);
   const forMessage = () => {
     axios
       .get("http://localhost:8000/formessage", {
@@ -193,13 +194,23 @@ const App = () => {
       });
   };
 
-  React.useEffect(() => {
-    setInterval(() => {}, 3000);
-    forMessage();
-    //eslint-disable-next-line
-  }, []);
+  const renderRef = React.useRef(true);
 
   React.useEffect(() => {
+    // 重要!!!
+    if (renderRef.current) {
+      renderRef.current = false;
+      return;
+    }
+    forMessage();
+  }, []);
+
+  // React.useEffect(() => {
+  //   //eslint-disable-next-line
+  // }, []);
+
+  React.useEffect(() => {
+    // eslint-disable-next-line array-callback-return
     messageAll.map((item) => {
       if (item.tabel === payload.name) {
         return toast.custom((t) => (
@@ -233,6 +244,7 @@ const App = () => {
         ));
       }
     });
+    //eslint-disable-next-line
   }, [messageAll]);
 
   return (

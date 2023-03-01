@@ -66,13 +66,7 @@ const Navbar = () => {
             >
                 服務鈴
             </Button>
-            <Button
-                onClick={() => {
-                    navigate("/games");
-                }}
-            >
-                離開
-            </Button>
+            <Button>結帳</Button>
         </Nav>
     );
 };

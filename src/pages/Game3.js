@@ -53,7 +53,6 @@ const Board = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 1rem;
 `;
 
 const Input = styled.div`
@@ -84,6 +83,7 @@ const Typing = styled.span`
 const KeyBoard = styled.table`
     border-collapse: separate;
     border-spacing: 10px;
+    margin-top: 50px;
 `;
 
 const Td = styled.td`

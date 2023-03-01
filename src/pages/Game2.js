@@ -17,7 +17,7 @@ const BottleImg = styled.img`
 
 const Touch = styled.h5`
     position: absolute;
-    top: 55%;
+    top: 58%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
