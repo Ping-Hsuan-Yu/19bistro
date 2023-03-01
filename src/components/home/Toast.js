@@ -178,7 +178,7 @@ const App = () => {
   const [messageAll, setMessageAll] = React.useState([]);
   const token = localStorage.getItem("CC_Token");
   const payload = JSON.parse(atob(token.split(".")[1]));
-  console.log(messageAll);
+  // console.log(messageAll);
   const forMessage = () => {
     axios
       .get("http://localhost:8000/formessage", {

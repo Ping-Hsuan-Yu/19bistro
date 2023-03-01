@@ -210,6 +210,7 @@ const Popup = (props) => {
                 桌號
               </label>
               <Inputtext
+                disabled={true}
                 id="username"
                 type="text"
                 placeholder="桌號"
@@ -223,18 +224,24 @@ const Popup = (props) => {
               <label for="" style={{ marginBottom: "10px" }}>
                 品項
               </label>
-              <Select style={{ width: "100%" }} ref={props.itemRef}>
+              <Select
+                style={{ width: "100%" }}
+                ref={props.itemRef}
+                onChange={(e) => {
+                  props.setSelect(e.target.value);
+                }}
+              >
                 <option>請選擇品項</option>
-                <option>夕陽餘暉</option>
-                <option>漂亮美莓</option>
-                <option>戀夏五百日</option>
-                <option>Mojito</option>
-                <option>老派滋味</option>
-                <option>草莓蛋糕</option>
-                <option>鳳梨冰茶</option>
-                <option>藍莓派</option>
-                <option>烏蘇拉</option>
-                <option>常倒冰茶</option>
+                <option value="19">夕陽餘暉</option>
+                <option value="20">漂亮美莓</option>
+                <option value="21">戀夏五百日</option>
+                <option value="22">Mojito</option>
+                <option value="23">老派滋味</option>
+                <option value="24">草莓蛋糕</option>
+                <option value="25">鳳梨冰茶</option>
+                <option value="26">藍莓派</option>
+                <option value="27">烏蘇拉</option>
+                <option value="28">常倒冰茶</option>
               </Select>
             </div>
           </Inputcontainer>
@@ -270,6 +277,7 @@ const ForMessage = ({ match, socket }) => {
   const D3 = React.useRef("");
   const [forD3, setForD3] = React.useState();
   const [buttonPop, setButtonPop] = React.useState(false);
+  const [select, setSelect] = React.useState();
 
   React.useEffect(() => {
     setForD3(D3.current.innerHTML);
@@ -288,15 +296,19 @@ const ForMessage = ({ match, socket }) => {
     const number = payload.name;
     const tabel = tabelRef.current.value;
     const item = itemRef.current.value;
+    // const item = select;
+    // console.log(item);
+
     const message = messageRef.current.value;
     itemRef.current.value = "";
     messageRef.current.value = "";
-                //addToCart用過了 看要不要改buyudrink
-    axios.post("http://localhost:1802/addtocart", {
-      itemNum: item,
+
+    axios.post("http://localhost:1802/buyudrink", {
+      itemNum: select,
       orderTable: number,
       deliverTable: tabel,
-      // 需要一個 remark 把備註記錄到資料庫中
+      // 需要一個 remark 把備註記錄到資料庫
+      remark: message,
     });
     setButtonPop(false);
     setModalShow(false);
@@ -340,6 +352,7 @@ const ForMessage = ({ match, socket }) => {
           itemRef={itemRef}
           messageRef={messageRef}
           registerUser={registerUser}
+          setSelect={setSelect}
         />
         <div className="container">
           <svg
