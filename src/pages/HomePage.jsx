@@ -1,17 +1,15 @@
 import React, { useState } from "react";
-import { Link, useLocation } from "react-router-dom";
 import logo from "../img/Quiz/19-logo.png";
 import imgBox from "../img/Quiz/bartender.png";
-import imgIG from "../img/Quiz/IG.png";
-import imgLine from "../img/Quiz/Line.png";
-import imgFB from "../img/Quiz/FB.png";
 import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import smoke from "../img/Quiz/smoke.png";
 import styled, { keyframes } from "styled-components";
 import "../styles/HomePage.css";
-import { useParams, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2"; //彈出效果的套件
+import "animate.css"; //另外用animate css改變動畫
 
 const Nav = styled.nav`
   display: flex;
@@ -155,11 +153,28 @@ const SmokeEffect3 = styled(SmokeEffect)`
   animation-delay: 2.5s;
 `;
 
+// 服務鈕動畫
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: "animate__animated animate__slideInRight animate__faster",
+  },
+  hideClass: {
+    popup: "animate__animated animate__fadeOutUp animate__faster",
+  },
+});
+
+// 主內容
 const Main = styled.section`
   position: relative;
   width: 100%;
-  height: 87vh;
-  padding: 1rem 0 0 0;
+  height: 100vh;
+  padding: 0 0 5rem 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -172,6 +187,7 @@ const Content = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
   z-index: 2;
 `;
 
@@ -196,19 +212,14 @@ const Sci = styled.div`
   position: absolute;
   justify-content: center;
   align-items: center;
-  bottom: 1.2rem;
+  bottom: 6rem;
   display: flex;
-  left: 11rem;
+  left: 12rem;
   z-index: 2;
+  @media (max-width: 1181px) {
+    bottom: 12rem;
+  }
 `;
-
-// const BG = styled.div`
-//   display: flex;
-//   justify-content: center;
-//   align-items: center;
-//   min-height: 700px;
-//   background-color: #333;
-// `;
 
 // const StartEffect = keyframes`
 //   0% {
@@ -283,7 +294,15 @@ const HomePage = () => {
               navigate("/");
             }}
           />
-          <Button>服務鈴</Button>
+          <Button
+            onClick={() => {
+              Toast.fire({
+                title: "已呼叫服務人員，請耐心等候",
+              });
+            }}
+          >
+            服務鈴
+          </Button>
           <span
             className={isActive ? "themeSwitch" : "themeSwitch active"}
             onClick={handleToggle}

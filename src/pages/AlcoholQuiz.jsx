@@ -5,12 +5,14 @@ import AnswerBlock from "../components/Quiz/AnswerBlock";
 import moon from "../img/Quiz/moon.png";
 import sun from "../img/Quiz/sun.png";
 import logo from "../img/Quiz/19-logo.png";
-import styled from "@emotion/styled";
+
+import styled from "styled-components";
 import wall from "../img/Quiz/wall.jpg";
 import { useNavigate } from "react-router-dom";
 import { motion } from "framer-motion";
+import Swal from "sweetalert2"; //彈出效果的套件
+import "animate.css"; //另外用animate css改變動畫
 import "../styles/quiz.css";
-
 const Img = styled.img`
   height: 60px;
   position: absolute;
@@ -30,11 +32,36 @@ const Button = styled.button`
 const Background = styled.div`
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
+  // min-height: 100vh;
   background: radial-gradient(#f00, rgba(0, 0, 0, 0.3)), url(${wall});
   background-size: cover;
   background-blend-mode: multiply;
   z-index: -9999;
+`;
+
+const Toast = Swal.mixin({
+  toast: true,
+  position: "top-end",
+  showConfirmButton: false,
+  timer: 3000,
+  color: "var(--primary-color)",
+  background: "var(--bg-color)",
+  showClass: {
+    popup: "animate__animated animate__slideInRight animate__faster",
+  },
+  hideClass: {
+    popup: "animate__animated animate__fadeOutUp animate__faster",
+  },
+});
+
+const Warming = styled.h2`
+  background-color: gray;
+  color: whitesmoke;
+  height: 3.65rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0 0 0;
 `;
 
 const AlcoholQuiz = () => {
@@ -152,7 +179,15 @@ const AlcoholQuiz = () => {
               navigate("/");
             }}
           />
-          <Button>服務鈴</Button>
+          <Button
+            onClick={() => {
+              Toast.fire({
+                title: "已呼叫服務人員，請耐心等候",
+              });
+            }}
+          >
+            服務鈴
+          </Button>
           <span
             className={isActive ? "themeSwitch" : "themeSwitch active"}
             onClick={handleToggle}
@@ -185,6 +220,7 @@ const AlcoholQuiz = () => {
           </div>
         </div>
       </Background>
+      <Warming>酒後不開車，安全有保障</Warming>
     </motion.div>
   );
 };

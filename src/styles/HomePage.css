@@ -81,6 +81,7 @@ header ul li a:hover {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 .themeSwitch img {
   width: 25px;
@@ -120,7 +121,7 @@ header ul li a:hover {
   color: var(--red);
 }
 
-.textBox a {
+/* .textBox a {
   display: inline-block;
   padding: 8px 20px;
   background-color: var(--red);
@@ -134,7 +135,7 @@ header ul li a:hover {
 
 .textBox a:hover {
   background-color: palevioletred;
-}
+} */
 
 /* 主圖片 */
 .imgBox {
@@ -148,8 +149,9 @@ header ul li a:hover {
 .imgBox::before {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  margin-top: 3rem;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background-color: var(--red);
 }
@@ -157,12 +159,12 @@ header ul li a:hover {
 .imgBox .mainLogo {
   position: absolute;
   z-index: 1;
-  max-width: 28rem;
+  max-width: 33rem;
   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-
   /* overflow-x: hidden; */
   transform: scale(1, 1);
   transition: all 0.75s ease-out;
+  z-index: 2;
 }
 
 .imgBox .mainLogo:hover {
@@ -242,7 +244,7 @@ header ul li a:hover {
   transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
   cursor: pointer;
   color: white;
-  font-size: 4em;
+  font-size: 5em;
   z-index: 10;
   line-height: 1em;
   -webkit-text-stroke: 0.3px #000;
@@ -300,12 +302,8 @@ header ul li a:hover {
 } */
 
 /* responsive */
-
-/* @media (max-width: 990px) {
-  section {
-    padding: 150px 20px;
+@media (max-width: 1181px) {
+  .imgBox .mainLogo {
+    max-width: 36rem;
   }
-  header {
-    padding: 20px;
-  }
-} */
+}
