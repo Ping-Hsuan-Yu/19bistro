@@ -108,7 +108,7 @@ function Order() {
       <CheckoutBtn
         style={{ display: Btn }}
         type="button"
-        onClick={()=>{CheckoutAlert.fire()}}
+        onClick={()=>{axios.post("http://localhost:1802/callserver", { tableNum: table });CheckoutAlert.fire()}}
       >
         結帳
       </CheckoutBtn>

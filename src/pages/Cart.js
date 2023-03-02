@@ -81,10 +81,10 @@ function Cart() {
 
   let navigate = useNavigate();
   const sendOrder = () => {
+    axios.post("http://localhost:1802/sendorder", { tableNum: table });
     Toast.fire({
       title: "訂單已送出",
     });
-    axios.post("http://localhost:1802/sendorder", { tableNum: table });
     navigate("/menu/" + table);
   };
 

@@ -7,7 +7,8 @@ import Card from "../components/menu/Card";
 import { useParams, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
-import 'animate.css';
+import "animate.css";
+import Logo from "../img/logo.png";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -17,11 +18,11 @@ const Toast = Swal.mixin({
   color: "var(--primary-color)",
   background: "var(--bg-color)",
   showClass: {
-    popup: 'animate__animated animate__slideInRight animate__faster'
+    popup: "animate__animated animate__slideInRight animate__faster",
   },
   hideClass: {
-    popup: 'animate__animated animate__fadeOutUp animate__faster'
-  }
+    popup: "animate__animated animate__fadeOutUp animate__faster",
+  },
 });
 const category = [
   { category: "A", title: "吃飽" },
@@ -73,7 +74,36 @@ const Block = styled.div`
   background-color: var(--bg-color);
 `;
 
+const Loading = styled.div`
+    display: inline-block;
+    width: 120px;
+    height: 120px;
+    position: absolute;
+    top: 55vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  &:after {
+    content: " ";
+    display: block;
+    width: 120px;
+    height: 120px;
+    margin: 0px;
+    border-radius: 50%;
+    border: 8px solid var(--primary-color);
+    border-color: var(--primary-color) transparent var(--primary-color) transparent;
+    animation: lds-dual-ring 1.2s linear infinite;
+  }
+  @keyframes lds-dual-ring {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+`;
+
 function Menu() {
+  const [isLoading, setIsLoading] = useState(true);
   const [mealDataList, setMealDataList] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState({ qty: 0, class: "" });
   const { table } = useParams();
@@ -82,11 +112,15 @@ function Menu() {
     href: "/cart/" + table,
     text: "訂單",
   };
-  let navigate = useNavigate();
   useEffect(() => {
-    axios.get("http://localhost:1802/menu").then(function (response) {
-      setMealDataList(response.data);
-    });
+    axios
+      .get("http://localhost:1802/menu")
+      .then(function (response) {
+        setMealDataList(response.data);
+      })
+      .then(() => {
+        setIsLoading(false);
+      });
     axios
       .post("http://localhost:1802/totalquantity", { tableNum: table })
       .then(function (response) {
@@ -96,11 +130,9 @@ function Menu() {
           setTotalQuantity({ qty: 0, class: "show" });
         }
       });
-    // navigate("/menu"+tableNum)
   }, []);
 
   const MenuSection = ({ category }) => (
-    // <ScrollSpy>
     <Section id={category.category}>
       <Title>{category.title}</Title>
       <Wrap>
@@ -118,41 +150,17 @@ function Menu() {
           ))}
       </Wrap>
     </Section>
-    // </ScrollSpy>
   );
 
   return (
     <>
-      {/* <select
-        style={{ position: "fixed", bottom: "0", right: "0" }}
-        onChange={(e) => {
-          setTableNum(e.target.value);
-        }}
-      >
-        <option value="A1">A1</option>
-        <option value="A2">A2</option>
-        <option value="A3">A3</option>
-        <option value="A4">A4</option>
-        <option value="B1">B1</option>
-        <option value="B2">B2</option>
-        <option value="B3">B3</option>
-        <option value="B4">B4</option>
-        <option value="B5">B5</option>
-        <option value="B6">B6</option>
-        <option value="B7">B7</option>
-        <option value="B8">B8</option>
-        <option value="C1">C1</option>
-        <option value="C2">C2</option>
-        <option value="C3">C3</option>
-        <option value="C4">C4</option>
-        <option value="C5">C5</option>
-        <option value="D1">D1</option>
-        <option value="D2">D2</option>
-        <option value="D3">D3</option>
-        <option value="D4">D4</option>
-      </select> */}
       <Fixed>
-        <Nav btnInner={btnInner} totalQuantity={totalQuantity} table={table} Toast={Toast}/>
+        <Nav
+          btnInner={btnInner}
+          totalQuantity={totalQuantity}
+          table={table}
+          Toast={Toast}
+        />
         <Tabs>
           {category.map((obj) => (
             <Tab category={obj} key={obj.category} />
@@ -160,9 +168,11 @@ function Menu() {
         </Tabs>
       </Fixed>
       <Block />
-      {category.map((obj) => (
-        <MenuSection category={obj} key={obj.category} />
-      ))}
+      {isLoading ? (
+        <Loading/>
+      ) : (
+        category.map((obj) => <MenuSection category={obj} key={obj.category} />)
+      )}
     </>
   );
 }
