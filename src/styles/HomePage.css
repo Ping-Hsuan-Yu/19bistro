@@ -10,6 +10,11 @@
 :root {
   --black: #333;
   --red: #b22c27;
+  --shake: #b22c27;
+  --shakeShadow: ;
+  --shakeText: ;
+  --darkButtonAN: ;
+  --darkButtonBG: #b22c27;
   --white: #e5e1d8;
   --white2: #fff;
   --black2: #333;
@@ -23,6 +28,12 @@
   --black: #fff;
   --white: rgb(94, 23, 21);
   --black2: rgb(178, 44, 39);
+  --shake: white;
+  --shakeShadow: 0 0 5px rgba(255, 65, 65, 1), 0 0 10px rgba(255, 65, 65, 1),
+    0 0 20px rgba(255, 65, 65, 1), 0 0 40px rgba(255, 65, 65, 1);
+  --shakeText: neon-shine 1s linear infinite;
+  --darkButtonAN: neon-shine 4s linear infinite;
+  --darkButtonBG: rgb(223, 76, 98);
 }
 
 /* section {
@@ -81,6 +92,7 @@ header ul li a:hover {
   cursor: pointer;
   justify-content: center;
   align-items: center;
+  z-index: 3;
 }
 .themeSwitch img {
   width: 25px;
@@ -117,10 +129,27 @@ header ul li a:hover {
 
 .textBox h2 span {
   font-size: 1.2em;
-  color: var(--red);
+  color: var(--shake);
+  text-shadow: var(--shakeShadow);
+  animation: var(--shakeText);
 }
 
-.textBox a {
+@keyframes neon-shine {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 0.5;
+  }
+
+  70% {
+    opacity: 0.3;
+  }
+  100% {
+    color: white;
+  }
+}
+/* .textBox a {
   display: inline-block;
   padding: 8px 20px;
   background-color: var(--red);
@@ -134,7 +163,7 @@ header ul li a:hover {
 
 .textBox a:hover {
   background-color: palevioletred;
-}
+} */
 
 /* 主圖片 */
 .imgBox {
@@ -148,8 +177,9 @@ header ul li a:hover {
 .imgBox::before {
   content: "";
   position: absolute;
-  width: 400px;
-  height: 400px;
+  margin-top: 3rem;
+  width: 500px;
+  height: 500px;
   border-radius: 50%;
   background-color: var(--red);
 }
@@ -157,12 +187,12 @@ header ul li a:hover {
 .imgBox .mainLogo {
   position: absolute;
   z-index: 1;
-  max-width: 28rem;
+  max-width: 33rem;
   filter: drop-shadow(12px 12px 7px rgba(0, 0, 0, 0.7));
-
   /* overflow-x: hidden; */
   transform: scale(1, 1);
   transition: all 0.75s ease-out;
+  z-index: 2;
 }
 
 .imgBox .mainLogo:hover {
@@ -211,6 +241,7 @@ header ul li a:hover {
   height: 150px;
   transform-style: preserve-3d;
   animation: StartEffect 10s linear infinite;
+  cursor: pointer;
 }
 
 .box div {
@@ -224,12 +255,13 @@ header ul li a:hover {
   left: calc(50% - 100px);
   width: 100px;
   height: 50px;
-  background: #444;
+  background: var(--darkButtonBG);
+  animation: var(--darkButtonAN);
   transform: rotateY(calc(90deg * var(--i))) translateZ(50px);
 }
 .box:hover div.block span {
   background: var(--primary-color);
-  filter: drop-shadow(0 0 25px var(--primary-color));
+  filter: drop-shadow(0 0 20px var(--primary-color));
 }
 
 .box div.text span {
@@ -240,24 +272,25 @@ header ul li a:hover {
   justify-content: center;
   align-items: center;
   transform: rotateY(calc(90deg * var(--i))) translateZ(100px);
-  cursor: pointer;
-  color: white;
+
+  color: rgb(0, 0, 0);
+  text-shadow: var(--shakeShadow);
   font-size: 5em;
   z-index: 10;
   line-height: 1em;
-  -webkit-text-stroke: 0.3px #000;
+  -webkit-text-stroke: 0.1px #000;
   transform-style: preserve-3d;
 }
 
 .box div.text span::before {
   content: attr(data-text);
   position: absolute;
-  bottom: 3px;
+  bottom: 1px;
   transform-origin: bottom;
   transform: rotateX(-90deg);
-  color: rgba(0, 0, 0, 0.2);
-  -webkit-text-stroke: 0px #000;
-  filter: blur(5px);
+  color: rgba(0, 0, 0, 0.1);
+  -webkit-text-stroke: 0.1px #9b9393;
+  filter: blur(4px);
 }
 
 .box div.text span::after {
@@ -266,7 +299,8 @@ header ul li a:hover {
   top: 50px;
   width: 250px;
   height: 50px;
-  background: #444;
+  background: var(--darkButtonBG);
+  animation: var(--darkButtonAN);
   transform: rotateX(-90deg);
   transition: 0.5s;
 }
@@ -300,12 +334,8 @@ header ul li a:hover {
 } */
 
 /* responsive */
-
-/* @media (max-width: 990px) {
-  section {
-    padding: 150px 20px;
+@media (max-width: 1181px) {
+  .imgBox .mainLogo {
+    max-width: 36rem;
   }
-  header {
-    padding: 20px;
-  }
-} */
+}

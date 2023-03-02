@@ -173,8 +173,8 @@ const Toast = Swal.mixin({
 const Main = styled.section`
   position: relative;
   width: 100%;
-  height: 87vh;
-  padding: 1rem 0 0 0;
+  height: 100vh;
+  padding: 0 0 5rem 0;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
@@ -187,6 +187,7 @@ const Content = styled.div`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
+
   z-index: 2;
 `;
 
@@ -211,10 +212,13 @@ const Sci = styled.div`
   position: absolute;
   justify-content: center;
   align-items: center;
-  bottom: 1.2rem;
+  bottom: 6rem;
   display: flex;
-  left: 11rem;
+  left: 12rem;
   z-index: 2;
+  @media (max-width: 1181px) {
+    bottom: 12rem;
+  }
 `;
 
 // const StartEffect = keyframes`

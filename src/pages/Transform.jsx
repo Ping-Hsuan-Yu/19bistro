@@ -4,7 +4,6 @@ import styled from "@emotion/styled";
 import wall from "../img/Quiz/wall.jpg";
 import "../styles/Transform.css";
 import { motion } from "framer-motion";
-import InitialTransition from "../components/Quiz/InitialTransition";
 
 const TransformBody = styled.div`
   overflow: hidden;
