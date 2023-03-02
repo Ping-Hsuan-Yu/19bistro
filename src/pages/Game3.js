@@ -114,6 +114,42 @@ const Boom = styled.div`
     text-align: center;
     line-height: 250px;
     font-size: 2.5rem;
+
+    @keyframes shake {
+        0% {
+            transform: translate(-50%, -50%) rotate(0deg) translate(1px, 1px);
+        }
+        10% {
+            transform: translate(-50%, -50%) rotate(-1deg) translate(-1px, -2px);
+        }
+        20% {
+            transform: translate(-50%, -50%) rotate(1deg) translate(-3px, 0px);
+        }
+        30% {
+            transform: translate(-50%, -50%) rotate(0deg) translate(3px, 2px);
+        }
+        40% {
+            transform: translate(-50%, -50%) rotate(1deg) translate(1px, -1px);
+        }
+        50% {
+            transform: translate(-50%, -50%) rotate(-1deg) translate(-1px, 2px);
+        }
+        60% {
+            transform: translate(-50%, -50%) rotate(0deg) translate(-3px, 1px);
+        }
+        70% {
+            transform: translate(-50%, -50%) rotate(-1deg) translate(3px, 1px);
+        }
+        80% {
+            transform: translate(-50%, -50%) rotate(1deg) translate(-1px, -1px);
+        }
+        90% {
+            transform: translate(-50%, -50%) rotate(0deg) translate(1px, 2px);
+        }
+        100% {
+            transform: translate(-50%, -50%) rotate(-1deg) translate(1px, -2px);
+        }
+    }
 `;
 
 ////////////////////////////////////////////////////
@@ -318,7 +354,14 @@ const Game3 = () => {
                         </tr>
                     </KeyBoard>
                 </Board>
-                <Boom style={{ visibility: boomText ? "visible" : "hidden" }}>{boomText}</Boom>
+                <Boom
+                    style={{
+                        visibility: boomText ? "visible" : "hidden",
+                        animation: boomText ? "shake 0.35s" : "none",
+                    }}
+                >
+                    {boomText}
+                </Boom>
             </div>
         </>
     );
