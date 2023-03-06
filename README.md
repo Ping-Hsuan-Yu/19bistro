@@ -11,7 +11,7 @@ Four functions on this page.
 
 
 ## Menu
-Browse the menu, order foods and call the service staff through the iPad.
+Browse the menu, order foods and call the service through the iPad.
 
 
 ## Treat you drinks
