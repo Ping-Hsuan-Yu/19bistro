@@ -55,7 +55,8 @@ const SmallClander = () => {
   let weekname = ["日", "一", "二", "三", "四", "五", "六"];
   let month_olympic = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
   let month_normal = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
-  let my_date = new Date(2023,2,14);
+  // let my_date = new Date(2023,2,14);
+  let my_date = new Date();
   let my_year = my_date.getFullYear();
   let my_month = my_date.getMonth();
   let my_day = my_date.getDate();
