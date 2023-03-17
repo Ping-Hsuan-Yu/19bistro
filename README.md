@@ -29,6 +29,8 @@ Call server everywhere
 ## Treat you drinks
 > You can make new friends by treating them drinks.
 
+![Treat you drinks](https://user-images.githubusercontent.com/121660005/225835341-39757aaa-ce0f-4eda-b657-a5c3a59c8e79.gif)
+
 
 ## Games
 > Offer games that guests can play while drinking.
@@ -48,3 +50,7 @@ Call server everywhere
 
 ## Quiz
 > Recommend a personalized cocktail using a psychological test.
+
+![landing page](https://user-images.githubusercontent.com/121660005/225833912-09dd7828-f0e8-472f-b575-4c07b75f0038.gif)
+![Quiz](https://user-images.githubusercontent.com/121660005/225835357-894d1a17-0095-48aa-ac59-d7a7ef27ecd9.gif)
+
