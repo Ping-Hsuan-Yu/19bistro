@@ -4,11 +4,10 @@ import "../styles/Menu.css";
 import Nav from "../components/menu/Nav";
 import Tab from "../components/menu/Tab";
 import Card from "../components/menu/Card";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import styled from "styled-components";
 import Swal from "sweetalert2";
 import "animate.css";
-import Logo from "../img/logo.png";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -27,7 +26,6 @@ const Toast = Swal.mixin({
 const category = [
   { category: "A", title: "吃飽" },
   { category: "B", title: "燒烤酥炸" },
-  // { category: "C", title: "酥炸" },
   { category: "D", title: "滷味" },
   { category: "E", title: "下酒菜" },
   { category: "F", title: "調酒" },
@@ -107,7 +105,6 @@ function Menu() {
   const [mealDataList, setMealDataList] = useState([]);
   const [totalQuantity, setTotalQuantity] = useState({ qty: 0, class: "" });
   const { table } = useParams();
-  // const [tableNum, setTableNum] = useState(table);
   const btnInner = {
     href: "/cart/" + table,
     text: "訂單",
@@ -140,12 +137,8 @@ function Menu() {
           .filter((obj) => obj.category === category.category) //check if category match title
           .map((obj) => (
             <Card
-              mealData={obj}
+              props={{obj, totalQuantity, setTotalQuantity, table, Toast}}
               key={obj.itemNum}
-              totalQuantity={totalQuantity}
-              setTotalQuantity={setTotalQuantity}
-              tableNum={table}
-              Toast={Toast}
             />
           ))}
       </Wrap>

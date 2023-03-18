@@ -8,7 +8,7 @@ import CartTabs from "../components/cart/CartTabs";
 import OrderCard from "../components/cart/OrderCard";
 import styled from "styled-components";
 import Swal from "sweetalert2";
-import 'animate.css';
+import "animate.css";
 
 const Toast = Swal.mixin({
   toast: true,
@@ -18,11 +18,11 @@ const Toast = Swal.mixin({
   color: "var(--primary-color)",
   background: "var(--bg-color)",
   showClass: {
-    popup: 'animate__animated animate__slideInRight animate__faster'
+    popup: "animate__animated animate__slideInRight animate__faster",
   },
   hideClass: {
-    popup: 'animate__animated animate__fadeOutUp animate__faster'
-  }
+    popup: "animate__animated animate__fadeOutUp animate__faster",
+  },
 });
 
 const CheckoutAlert = Swal.mixin({
@@ -32,12 +32,12 @@ const CheckoutAlert = Swal.mixin({
   color: "var(--primary-color)",
   background: "var(--bg-color)",
   showClass: {
-    popup: 'animate__animated animate__fadeInDown animate__fast'
+    popup: "animate__animated animate__fadeInDown animate__fast",
   },
   hideClass: {
-    popup: 'animate__animated animate__fadeOutDown animate__fast'
-  }
-})
+    popup: "animate__animated animate__fadeOutDown animate__fast",
+  },
+});
 
 const active = {
   cart: "",
@@ -73,23 +73,19 @@ function Order() {
     href: "/menu/" + table,
     text: "回到菜單",
   };
-
+  const totalQuantity = false;
   useEffect(() => {
-    axios
-      .post("http://localhost:1802/order", { tableNum: table })
-      .then(function (response) {
-        setOrderDataList(response.data);
-      });
-    axios
-      .post("http://localhost:1802/totalorder", { tableNum: table })
-      .then(function (response) {
-        if (response.data[0].quantity) {
-          setTotalOrder({ qty: response.data[0].quantity, class: "show" });
-        } else {
-          setTotalOrder({ qty: 0, class: "show" });
-          setBtn("none")
-        }
-      });
+    axios.post("http://localhost:1802/order", { tableNum: table }).then(function (response) {
+      setOrderDataList(response.data);
+    });
+    axios.post("http://localhost:1802/totalorder", { tableNum: table }).then(function (response) {
+      if (response.data[0].quantity) {
+        setTotalOrder({ qty: response.data[0].quantity, class: "show" });
+      } else {
+        setTotalOrder({ qty: 0, class: "show" });
+        setBtn("none");
+      }
+    });
   }, []);
   return (
     <>
@@ -108,7 +104,10 @@ function Order() {
       <CheckoutBtn
         style={{ display: Btn }}
         type="button"
-        onClick={()=>{axios.post("http://localhost:1802/callserver", { tableNum: table });CheckoutAlert.fire()}}
+        onClick={() => {
+          axios.post("http://localhost:1802/callserver", { tableNum: table });
+          CheckoutAlert.fire();
+        }}
       >
         結帳
       </CheckoutBtn>

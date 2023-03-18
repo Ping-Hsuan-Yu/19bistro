@@ -3,7 +3,6 @@ import { encode } from "base64-arraybuffer";
 import axios from "axios";
 import styled from "styled-components";
 
-
 const Row = styled.div`
   display: flex;
   flex-direction: row;
@@ -80,13 +79,13 @@ const AddCartBtn = styled.button`
   font-weight: 700;
 `;
 
-const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum, Toast }) => {
-  const { itemNum, mealName, price, mealDesc, image } = mealData;
+const Card = ({ props }) => {
+  const { totalQuantity, setTotalQuantity, table, Toast } = props;
+  const { itemNum, mealName, price, mealDesc, image } = props.obj;
   let imgsrc = encode(image.data);
 
   const [quantity, setQuantity] = useState(1);
-  const handleQuantity = (type) =>
-    setQuantity(type === 1 ? quantity + 1 : quantity - 1);
+  const handleQuantity = (type) => setQuantity(type === 1 ? quantity + 1 : quantity - 1);
 
   const addToCart = () => {
     setTotalQuantity({ qty: totalQuantity.qty + quantity, class: "show" });
@@ -94,7 +93,7 @@ const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum, Toast }) =>
       title: `${mealName} x${quantity}`,
     });
     axios.post("http://localhost:1802/addtocart", {
-      tableNum: tableNum,
+      tableNum: table,
       itemNum: itemNum,
       quantity: quantity,
     });
@@ -119,7 +118,7 @@ const Card = ({ mealData, totalQuantity, setTotalQuantity, tableNum, Toast }) =>
             </PlusMinus>
             <InputQty type="number" value={quantity} name="quantity" readOnly />
             <input type="hidden" value={itemNum} name="itemNum" readOnly />
-            <input type="hidden" value={tableNum} name="tableNum" readOnly />
+            <input type="hidden" value={table} name="tableNum" readOnly />
             <PlusMinus
               type="button"
               onClick={() => handleQuantity(1)}
